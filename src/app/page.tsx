@@ -2,8 +2,8 @@ import Image from "next/image";
 
 function Home() {
   return (
-    <div>
-      <h1 className="text-primary-100 text-2xl">Hello World</h1>
+    <div className="container mx-auto">
+      <h1 className="text-3xl font-bold text-center"></h1>
     </div>
   );
 }
