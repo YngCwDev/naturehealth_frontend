@@ -4,19 +4,32 @@ import SearchInput from "./SearchInput";
 import { ShoppingCart } from "lucide-react";
 
 const Navbar = () => {
+
+  
   return (
-    <div className="bg-white px-[15vw] ">
-      <div className="py-2 flex justify-between items-center gap-[10vw]">
-        <Image src="/logo.png" alt="Nature Health" width={120} height={120} />
-        <SearchInput />
-        <div className="flex items-center gap-2">
-          <div>
-            <ShoppingCart />
-          </div>
-          <p className="text-[16px]">0.00</p>
+    <nav className="bg-white drop-shadow-md w-full fixed top-0 z-50">
+      <div className="max-w-screen-xl mx-auto px-6 md:px-12 py-3 flex justify-between items-center flex-wrap gap-4">
+        {/* Logo */}
+        <Image
+          src="/logo.png"
+          alt="Nature Health"
+          width={100}
+          height={100}
+          className="h-auto"
+        />
+
+        {/* Campo de busca */}
+        <div className="flex-1 min-w-[200px] max-w-[400px]">
+          <SearchInput />
+        </div>
+
+        {/* Carrinho de compras */}
+        <div className="relative flex items-center gap-2">
+          <ShoppingCart size={28} className="text-gray-700" />
+          <p className="text-lg font-semibold">{}</p>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

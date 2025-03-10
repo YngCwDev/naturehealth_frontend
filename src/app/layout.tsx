@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "../styles/globals.css";
 import Navbar from "@/components/navbar/navbar";
 import Footer from "@/components/footer/footer";
+import DisableZoom from "@/lib/DisableZoom";
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -21,12 +22,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <DisableZoom />
       <body
         className={`${poppins.className} antialiased `}
         cz-shortcut-listen="true"
       >
         <Navbar />
-        {children}
+        <main className="flex felx-col gap-24">{children}</main>
         <Footer />
       </body>
     </html>
