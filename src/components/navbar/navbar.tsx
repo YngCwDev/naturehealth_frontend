@@ -1,11 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import SearchInput from "./SearchInput";
+import Cart from "../cart/cart";
 import { ShoppingCart } from "lucide-react";
 
 const Navbar = () => {
-
-  
   return (
     <nav className="bg-white drop-shadow-md w-full fixed top-0 z-50">
       <div className="max-w-screen-xl mx-auto px-6 md:px-12 py-3 flex justify-between items-center flex-wrap gap-4">

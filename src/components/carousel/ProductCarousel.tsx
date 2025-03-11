@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { use, Suspense } from "react";
 import ProductCard from "../productCard/productCard";
 import {
   Carousel,
@@ -7,12 +8,23 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from "../ui/carousel";
-import { mockProducts } from "@/lib/productApi";
 
-// Mock de Produtos (apenas para exemplo)
+async function retrieve() {
+  const res = await fetch("http://localhost:4000/Products");
+  if (!res.ok) {
+    throw new Error("Failed to retrieve data");
+  }
+  return res.json();
+}
 
+interface data {
+  product: any;
+  index: number;
+}
 
-const ProductCarousel = ({ products = mockProducts }) => {
+const ProductCarousel = () => {
+  const products = use(retrieve());
+  console.log(products);
   return (
     <div>
       <Carousel>

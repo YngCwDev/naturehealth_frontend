@@ -6,8 +6,9 @@
 import React, { useRef, useState } from "react";
 import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
 import Image from "next/image";
-import { Ghost, Minus, Plus, ShoppingBag } from "lucide-react";
+import { Minus, Plus, ShoppingBag } from "lucide-react";
 import { Button } from "../ui/button";
+import Cart from "../cart/cart";
 
 // Define a interface para os detalhes do produto
 export interface ProductCardProps {
@@ -60,7 +61,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   // Imprime  o produto formatado selecionado
   const formatedCurrentProduct = () => {
-    console.log("Produto adicionado:", {
+    Cart({
       id,
       name,
       description,
@@ -69,6 +70,16 @@ const ProductCard: React.FC<ProductCardProps> = ({
       image,
       qty: quantityRef.current,
     });
+
+    /* console.log("Produto adicionado:", {
+      id,
+      name,
+      description,
+      price,
+      brand,
+      image,
+      qty: quantityRef.current,
+    }); */
   };
 
   return (

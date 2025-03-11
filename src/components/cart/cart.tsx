@@ -1,32 +1,23 @@
-import { ShoppingBag } from "lucide-react";
+import { ShoppingBag, ShoppingCart } from "lucide-react";
 import { Button } from "../ui/button";
+import React from "react";
+import { ProductCardProps } from "../productCard/productCard";
 
-const Cart = ({
-  quantity,
-  productID,
-}: {
-  quantity: number;
-  productID: String;
+const Cart: React.FC<ProductCardProps> = ({
+  id,
+  name,
+  description,
+  price,
+  brand,
+  image,
+  qty,
 }) => {
-  const [cart, setCart] = useLocalStorage<{ id: String; Qty: number }[]>(
-    "shoppingCart",
-    []
-  );
-
-  const addToCart = (product: { id: String; Qty: number }) => {
-    setCart([...cart, product]);
-  };
-
+  console.log(
+    id
+  )
   return (
-    
-      {/*  <button>Adicionar Produto</button>
-      <ul>
-        {cart.map((item, index) => (
-          <li key={index}>{item.name}</li>
-        ))}
-      </ul> */}
-    </div>
-  );
+    <div></div>
+  )
 };
 
 export default Cart;
