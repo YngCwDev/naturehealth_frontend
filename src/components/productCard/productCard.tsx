@@ -1,17 +1,23 @@
+//Documentacao do componente
+// Componente de produto que exibe os detalhes do produto e permite
+// Organizado,  formarta  e retorna um objecto do produto selecionado pronto para ser utilizado
+
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
 import Image from "next/image";
-import { Minus, Plus, ShoppingBag } from "lucide-react";
-import Cart from "../cart/cart";
+import { Ghost, Minus, Plus, ShoppingBag } from "lucide-react";
+import { Button } from "../ui/button";
 
-interface ProductCardProps {
+// Define a interface para os detalhes do produto
+export interface ProductCardProps {
   id: string;
   name: string;
   description: string;
   price: number;
   brand: string;
   image: string;
+  qty?: number; // Add optional qty property
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
@@ -22,15 +28,51 @@ const ProductCard: React.FC<ProductCardProps> = ({
   brand,
   image,
 }) => {
-  const [quantity, setQuantity] = useState(0);
-  
-  const increaseQuantity = () => setQuantity((prev) => prev + 1);
-  const decreaseQuantity = () =>
-    setQuantity((prev) => (prev > 0 ? prev - 1 : 0));
+  const quantityRef = useRef(0); // Armazena a quantidade
+  const [quantity, setQuantity] = useState(0); // Estado para forçar atualização da UI
+
+  const updateUI = () => {
+    setQuantity(quantityRef.current);
+  };
+
+  const increaseQuantity = () => {
+    quantityRef.current += 1;
+    updateUI(); // Força re-render
+  };
+
+  const decreaseQuantity = () => {
+    if (quantityRef.current > 0) {
+      quantityRef.current -= 1;
+      updateUI(); // Força re-render
+    }
+  };
+
+  // Referência para o produto no carrinho(Todos os detalhes do produto obtiodos da API)
+  const productCartDetails = useRef<ProductCardProps>({
+    id: id,
+    name: name,
+    description: description,
+    price: price,
+    brand: brand,
+    image: image,
+    qty: quantityRef.current,
+  });
+
+  // Imprime  o produto formatado selecionado
+  const formatedCurrentProduct = () => {
+    console.log("Produto adicionado:", {
+      id,
+      name,
+      description,
+      price,
+      brand,
+      image,
+      qty: quantityRef.current,
+    });
+  };
 
   return (
     <Card className="max-w-[350px] flex flex-col justify-between items-center p-4 drop-shadow-md">
-      {/* 📷 Imagem do Produto */}
       <Image
         src={image}
         alt={name}
@@ -39,7 +81,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
         className="rounded-md w-full"
       />
 
-      {/* 📌 Informações */}
       <CardHeader className="flex flex-col gap-2 w-full">
         <CardTitle className="text-lg font-semibold">{name}</CardTitle>
         <CardDescription className="text-sm text-gray-500">
@@ -51,22 +92,32 @@ const ProductCard: React.FC<ProductCardProps> = ({
         </div>
       </CardHeader>
 
-      {/* 🛒 Botões de Ação */}
       <div className="flex gap-2 mt-4 w-full justify-between">
-        {/* 📌 Contador */}
         <div className="w-full">
           <div
             className="w-full flex items-center gap-2 justify-between p-2 border border-gray-300 rounded-full px-6"
             aria-label="Alterar quantidade do produto"
           >
-            <Plus size={10} onClick={increaseQuantity} />
+            <Button variant={"ghost"} onClick={increaseQuantity}>
+              <Plus size={16} />
+            </Button>
             <p className="text-2xl">{quantity}</p>
-            <Minus size={10} onClick={decreaseQuantity} />
+            <Button variant={"ghost"} onClick={decreaseQuantity}>
+              <Minus size={16} />
+            </Button>
           </div>
         </div>
 
-        {/* 🛍️ Botão Adicionar ao Carrinho */}
-        <Cart productID={id} quantity={quantity} />
+        <div className="w-full">
+          <Button
+            onClick={formatedCurrentProduct}
+            variant={"darkgreen"}
+            className="w-full flex items-center gap-2 p-6"
+          >
+            <p>Adicionar</p>
+            <ShoppingBag size={20} />
+          </Button>
+        </div>
       </div>
     </Card>
   );

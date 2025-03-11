@@ -11,7 +11,7 @@ const Navbar = () => {
       <div className="max-w-screen-xl mx-auto px-6 md:px-12 py-3 flex justify-between items-center flex-wrap gap-4">
         {/* Logo */}
         <Image
-          src="/logo.png"
+          src="/glogo.png"
           alt="Nature Health"
           width={100}
           height={100}
