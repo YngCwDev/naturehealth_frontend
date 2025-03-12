@@ -29,37 +29,18 @@ const ProductCard: React.FC<ProductCardProps> = ({
   brand,
   image,
 }) => {
-  const quantityRef = useRef(0); // Armazena a quantidade
-  const [quantity, setQuantity] = useState(0); // Estado para forçar atualização da UI
-
-  const updateUI = () => {
-    setQuantity(quantityRef.current);
-  };
+  const [quantity, setQuantity] = useState(0);
 
   const increaseQuantity = () => {
-    quantityRef.current += 1;
-    updateUI(); // Força re-render
+    setQuantity(quantity + 1);
   };
 
   const decreaseQuantity = () => {
-    if (quantityRef.current > 0) {
-      quantityRef.current -= 1;
-      updateUI(); // Força re-render
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
     }
   };
 
-  // Referência para o produto no carrinho(Todos os detalhes do produto obtiodos da API)
-  const productCartDetails = useRef<ProductCardProps>({
-    id: id,
-    name: name,
-    description: description,
-    price: price,
-    brand: brand,
-    image: image,
-    qty: quantityRef.current,
-  });
-
-  // Imprime  o produto formatado selecionado
   const formatedCurrentProduct = () => {
     Cart({
       id,
@@ -68,18 +49,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
       price,
       brand,
       image,
-      qty: quantityRef.current,
+      qty: quantity,
     });
-
-    /* console.log("Produto adicionado:", {
-      id,
-      name,
-      description,
-      price,
-      brand,
-      image,
-      qty: quantityRef.current,
-    }); */
   };
 
   return (

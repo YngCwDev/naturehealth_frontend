@@ -1,5 +1,5 @@
 "use client";
-import React, { use, Suspense } from "react";
+import React, { use, Suspense, useState, useEffect } from "react";
 import ProductCard from "../productCard/productCard";
 import {
   Carousel,
@@ -8,22 +8,36 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from "../ui/carousel";
+import axios from "axios";
 
-async function retrieve() {
-  const res = await fetch("http://localhost:4000/Products");
-  if (!res.ok) {
-    throw new Error("Failed to retrieve data");
-  }
-  return res.json();
-}
-
-interface data {
-  product: any;
-  index: number;
-}
+type product = {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  brand: string;
+  image: string;
+};
 
 const ProductCarousel = () => {
-  const products = use(retrieve());
+  const [products, setProducts] = useState<product[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchProducts() {
+      try {
+        const res = await axios.get("http://localhost:4000/Products");
+        setProducts(res.data);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchProducts();
+  }, []);
+  if (loading) return <div>Loading...</div>;
+
   console.log(products);
   return (
     <div>
