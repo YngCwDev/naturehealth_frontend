@@ -8,7 +8,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
 import Image from "next/image";
 import { Minus, Plus, ShoppingBag } from "lucide-react";
 import { Button } from "../ui/button";
-import Cart from "../cart/cart";
+import Link from "next/link";
 
 // Define a interface para os detalhes do produto
 export interface ProductCardProps {
@@ -29,7 +29,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   brand,
   image,
 }) => {
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
 
   const increaseQuantity = () => {
     setQuantity(quantity + 1);
@@ -41,67 +41,56 @@ const ProductCard: React.FC<ProductCardProps> = ({
     }
   };
 
-  const formatedCurrentProduct = () => {
-    Cart({
-      id,
-      name,
-      description,
-      price,
-      brand,
-      image,
-      qty: quantity,
-    });
+  const addToCart = () => {
+    console.log(quantity, id);
   };
 
   return (
-    <Card className="max-w-[350px] flex flex-col justify-between items-center p-4 drop-shadow-md">
-      <Image
-        src={image}
-        alt={name}
-        width={300}
-        height={300}
-        className="rounded-md w-full"
-      />
-
-      <CardHeader className="flex flex-col gap-2 w-full">
-        <CardTitle className="text-lg font-semibold">{name}</CardTitle>
-        <CardDescription className="text-sm text-gray-500">
-          {description}
-        </CardDescription>
-        <div className="flex justify-between items-center w-full">
-          <span className="text-gray-700">{brand}</span>
-          <span className="font-bold text-lg">{price} Mts</span>
+    <div className="flex flex-col md:w-[40%] lg:w-[20%] items-center justify-between gap-5 shadow-lg p-4">
+      <Link href={"/product"}>
+        <div className="rounded-md w-full h-full">
+          <Image src={image} alt={name} width={300} height={300} />
         </div>
-      </CardHeader>
+      </Link>
 
-      <div className="flex gap-2 mt-4 w-full justify-between">
-        <div className="w-full">
+      <div className="flex flex-col justify-between gap-4 w-full h-full">
+        <Link href={"/product"}>
+          <div className="flex flex-col gap-2">
+            <h2 className="text-[24px] font-semibold text-green1">{name}</h2>
+            <p className="text-sm text-gray-500">{description}</p>
+            <div className="flex justify-between items-center">
+              <p className="text-gray-700">{brand}</p>
+              <p className="font-bold text-2xl text-green2">
+                {price} Mts
+              </p>
+            </div>
+          </div>
+        </Link>
+
+        <div className=" bottom-4 flex gap-2 mt-4 justify-between w-auto">
           <div
-            className="w-full flex items-center gap-2 justify-between p-2 border border-gray-300 rounded-full px-6"
+            className="flex items-center gap-2 justify-between  border border-gray-300 rounded-full cursor-pointer "
             aria-label="Alterar quantidade do produto"
           >
-            <Button variant={"ghost"} onClick={increaseQuantity}>
-              <Plus size={16} />
-            </Button>
+            <button  onClick={increaseQuantity} className="p-2  cursor-pointer">
+              <Plus size={20} />
+            </button>
             <p className="text-2xl">{quantity}</p>
-            <Button variant={"ghost"} onClick={decreaseQuantity}>
-              <Minus size={16} />
-            </Button>
+            <button  onClick={decreaseQuantity} className="p-2  cursor-pointer">
+              <Minus size={20} />
+            </button>
           </div>
-        </div>
 
-        <div className="w-full">
-          <Button
-            onClick={formatedCurrentProduct}
-            variant={"darkgreen"}
-            className="w-full flex items-center gap-2 p-6"
+          <button
+            onClick={addToCart}
+            className="flex w-full bg-darkgreen1 items-center  text-white justify-center gap-2 p-4 rounded-full  cursor-pointer"
           >
-            <p>Adicionar</p>
-            <ShoppingBag size={20} />
-          </Button>
+            <p className="text-[16px]">Adicionar</p>
+            <ShoppingBag  className="text-[min(12px, 22px)]"/>
+          </button>
         </div>
       </div>
-    </Card>
+    </div>
   );
 };
 

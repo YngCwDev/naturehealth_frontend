@@ -10,14 +10,20 @@ const Cart: React.FC<ProductCardProps> = ({
   price,
   brand,
   image,
-  qty,
+  qty = 0,
 }) => {
-  console.log(
-    id
-  )
   return (
-    <div></div>
-  )
+    <div>
+      <div>
+        {/* Carrinho de compras */}
+        <div className="relative flex items-center gap-2">
+          <ShoppingCart size={28} className="text-gray-700" />
+          <p className="text-lg font-semibold">{}</p>
+        </div>
+      </div>
+      {qty > 0 && <div>{qty}</div>}
+    </div>
+  );
 };
 
 export default Cart;

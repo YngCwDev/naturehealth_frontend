@@ -4,10 +4,10 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-darkgreen1 text-white py-10 px-6 md:px-16 w-full">
-      <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="relative place-items-center bg-darkgreen1 text-white   px-6 md:px-[15vw] w-full">
+      <div className="flex justify-between py-24 w-full gap-4 flex-wrap">
         {/* Logo e descrição */}
-        <div className="footer_element text-sm flex flex-col gap-3">
+        <div className="footer_element text-sm flex flex-col  gap-3">
           <Image
             src="/wlogo.png"
             alt="Nature Health"
@@ -23,7 +23,7 @@ const Footer = () => {
 
         {/* Informações de Contato */}
         <div className="footer_element">
-          <h2 className="text-lg font-semibold mb-3">Informações de Contato</h2>
+          <h2 className="text-2xl font-semibold mb-3">Informações de Contato</h2>
           <p>Telefone: +258 84 123 4567</p>
           <p>WhatsApp: +258 84 123 4567</p>
           <p>Email: atendimento@naturehealth.co.mz</p>
@@ -31,8 +31,8 @@ const Footer = () => {
 
         {/* Redes Sociais */}
         <div className="footer_element">
-          <h2 className="text-lg font-semibold mb-3">Siga-nos:</h2>
-          <div className="flex gap-4">
+          <h2 className="text-2xl font-semibold ">Redes Socias</h2>
+          <div className="flex">
             <Instagram
               size={30}
               className="hover:text-gray-300 cursor-pointer"
@@ -46,17 +46,17 @@ const Footer = () => {
 
         {/* Métodos de Pagamento */}
         <div className="footer_element">
-          <h2 className="text-lg font-semibold mb-3">Métodos de Pagamento</h2>
+          <h2 className="text-2xl font-semibold mb-3">Métodos de Pagamento</h2>
           <div className="flex gap-6 items-center">
             <Image
-              src={"/mpesa.png"}
+              src={"/mpesa.svg"}
               alt="Mpesa icon"
               width={80}
               height={60}
               className="h-auto"
             />
             <Image
-              src={"/emola.png"}
+              src={"/emola.svg"}
               alt="Emola icon"
               width={80}
               height={60}
@@ -64,6 +64,9 @@ const Footer = () => {
             />
           </div>
         </div>
+      </div>
+      <div className="py-2 border-t-2 border-green1 w-full">
+        <p>© 2025 Nature Health. Política de Privacidade </p>
       </div>
     </footer>
   );

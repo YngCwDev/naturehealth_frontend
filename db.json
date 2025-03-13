@@ -14,7 +14,7 @@
       "description": "Saw palmetto enhanced - 60 cápsulas",
       "price": 500,
       "brand": "Nature",
-      "image": "/products/nature.png"
+      "image": "/products/moringa.png"
     },
     {
       "id": "3c",
@@ -22,7 +22,7 @@
       "description": "Saw palmetto enhanced - 60 cápsulas",
       "price": 500,
       "brand": "Nature",
-      "image": "/products/nature.png"
+      "image": "/products/temple.png"
     },
     {
       "id": "4d",
@@ -36,7 +36,47 @@
       "id": "5e",
       "name": "Nature Prostate Support",
       "description": "Saw palmetto enhanced - 60 cápsulas",
-      "price": 500,
+      "price": 1950,
+      "brand": "Nature",
+      "image": "/products/moringa.png"
+    },
+    {
+      "id": "6f",
+      "name": "Energy Booster",
+      "description": "Suplemento natural para energia - 90 cápsulas",
+      "price": 1200,
+      "brand": "Nature",
+      "image": "/products/temple.png"
+    },
+    {
+      "id": "7g",
+      "name": "Vitamin C Complex",
+      "description": "Suplemento vitamínico - 120 cápsulas",
+      "price": 850,
+      "brand": "Nature",
+      "image": "/products/nature.png"
+    },
+    {
+      "id": "8h",
+      "name": "Omega 3 Premium",
+      "description": "Óleo de peixe purificado - 60 cápsulas",
+      "price": 1350,
+      "brand": "Nature",
+      "image": "/products/moringa.png"
+    },
+    {
+      "id": "9i",
+      "name": "Magnesium Plus",
+      "description": "Suplemento de magnésio - 100 cápsulas",
+      "price": 950,
+      "brand": "Nature",
+      "image": "/products/temple.png"
+    },
+    {
+      "id": "10j",
+      "name": "Zinc Forte",
+      "description": "Suplemento de zinco - 60 cápsulas",
+      "price": 700,
       "brand": "Nature",
       "image": "/products/nature.png"
     }

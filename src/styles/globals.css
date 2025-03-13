@@ -96,8 +96,6 @@
   flex-direction: column;
   gap: 1rem;
   max-width: 350px;
-  margin: 0 auto;
-  align-items: start;
 }
 
 .dark {
@@ -179,7 +177,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-gray-100 text-foreground flex flex-col items-center min-h-screen;
+    @apply bg-gray-50 text-foreground flex flex-col items-center min-h-screen;
   }
   a {
     @apply text-primary;
@@ -195,7 +193,7 @@
   }
 
   h1 {
-    @apply text-3xl font-bold text-darkgreen1 ;
+    @apply text-3xl font-bold text-darkgreen1;
   }
   h2 {
     @apply text-2xl font-semibold text-green1;

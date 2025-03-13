@@ -1,16 +1,9 @@
 "use client";
-import React, { use, Suspense, useState, useEffect } from "react";
-import ProductCard from "../productCard/productCard";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
-} from "../ui/carousel";
-import axios from "axios";
 
-type product = {
+import React, { useState, useEffect, useRef } from "react";
+import ProductCard from "../productCard/productCard";
+
+type Product = {
   id: string;
   name: string;
   description: string;
@@ -20,38 +13,34 @@ type product = {
 };
 
 const ProductCarousel = () => {
-  const [products, setProducts] = useState<product[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const res = await axios.get("http://localhost:4000/Products");
-        setProducts(res.data);
+        const res = await fetch("http://localhost:4000/Products");
+        const data = await res.json();
+        setProducts(data);
       } catch (error) {
-        console.log(error);
+        console.error("Erro ao buscar produtos:", error);
+        setError("Falha ao carregar produtos.");
       } finally {
         setLoading(false);
       }
     }
     fetchProducts();
   }, []);
-  if (loading) return <div>Loading...</div>;
 
-  console.log(products);
+  if (loading) return <div>Carregando produtos...</div>;
+  if (error) return <div className="text-red-500">{error}</div>;
+
   return (
-    <div>
-      <Carousel>
-        <CarouselContent className="-ml-2 md:-ml-4">
-          {products.map((product, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-              <ProductCard {...product} />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+    <div className="flex flex-wrap  gap-6 px-[1rem]">
+      {products.map((product) => (
+        <ProductCard {...product} key={product.id} />
+      ))}
     </div>
   );
 };
