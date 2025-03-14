@@ -12,7 +12,7 @@ type Product = {
   image: string;
 };
 
-const ProductCarousel = () => {
+const ProductList = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -39,7 +39,7 @@ const ProductCarousel = () => {
   if (error) return <div className="text-red-500">{error}</div>;
 
   return (
-    <div className=" grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8 px-20 place-items-center">
+    <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-2 gap-4 md:gap-8 px-5 md:px-20 place-items-center">
       {products.map((product) => (
         <ProductCard {...product} key={product.id} />
       ))}
@@ -47,4 +47,4 @@ const ProductCarousel = () => {
   );
 };
 
-export default ProductCarousel;
+export default ProductList;

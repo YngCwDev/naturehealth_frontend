@@ -1,5 +1,5 @@
 import Banner from "@/components/banner/banner";
-import ProductCarousel from "@/components/carousel/ProductCarousel";
+import ProductList from "@/components/productList/productList";
 
 function Home() {
   return (
@@ -9,11 +9,9 @@ function Home() {
       </header>
       <section className="flex flex-col items-center justify-center">
         <div className="text-center my-8">
-          <h1 className="text-[min(16px, 30px)]">
-            O MELHOR PARA VOCÊ ESTÁ AQUI
-          </h1>
+          <h1 className="md:text-2xl text-xl">O MELHOR PARA VOCÊ ESTÁ AQUI</h1>
         </div>
-        <ProductCarousel />
+        <ProductList />
       </section>
     </main>
   );
