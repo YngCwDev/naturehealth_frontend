@@ -20,7 +20,9 @@ const ProductCarousel = () => {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const res = await fetch("http://localhost:4000/Products");
+        const res = await fetch(
+          "https://my-json-server.typicode.com//YngCwDev/fakeApi/Products"
+        );
         const data = await res.json();
         setProducts(data);
       } catch (error) {
@@ -37,7 +39,7 @@ const ProductCarousel = () => {
   if (error) return <div className="text-red-500">{error}</div>;
 
   return (
-    <div className="flex flex-wrap  gap-6 px-[1rem]">
+    <div className=" grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8 px-20 place-items-center">
       {products.map((product) => (
         <ProductCard {...product} key={product.id} />
       ))}

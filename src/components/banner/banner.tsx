@@ -25,7 +25,7 @@ const Banner = () => {
           alt="prostate banner"
           width={1920}
           height={1080}
-          className="w-full md:hidden"
+          className="w-screen md:hidden"
         />
       </Link>
     </div>

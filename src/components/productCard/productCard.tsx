@@ -4,10 +4,8 @@
 
 "use client";
 import React, { useRef, useState } from "react";
-import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
 import Image from "next/image";
 import { Minus, Plus, ShoppingBag } from "lucide-react";
-import { Button } from "../ui/button";
 import Link from "next/link";
 
 // Define a interface para os detalhes do produto
@@ -46,7 +44,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   };
 
   return (
-    <div className="flex flex-col md:w-[40%] lg:w-[20%] items-center justify-between gap-5 shadow-lg p-4">
+    <div className="flex flex-col min-w-[300px] shrink-0 items-center justify-between gap-5 shadow-lg p-4 rounded-md cursor-pointer hover:scale-102 transition-all">
       <Link href={"/product"}>
         <div className="rounded-md w-full h-full">
           <Image src={image} alt={name} width={300} height={300} />
@@ -57,12 +55,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <Link href={"/product"}>
           <div className="flex flex-col gap-2">
             <h2 className="text-[24px] font-semibold text-green1">{name}</h2>
-            <p className="text-sm text-gray-500">{description}</p>
+            <p className="text-sm text-gray-500 text-wrap">{description}</p>
             <div className="flex justify-between items-center">
               <p className="text-gray-700">{brand}</p>
-              <p className="font-bold text-2xl text-green2">
-                {price} Mts
-              </p>
+              <p className="font-bold text-xl text-green2">{price} Mts</p>
             </div>
           </div>
         </Link>
@@ -72,21 +68,23 @@ const ProductCard: React.FC<ProductCardProps> = ({
             className="flex items-center gap-2 justify-between  border border-gray-300 rounded-full cursor-pointer "
             aria-label="Alterar quantidade do produto"
           >
-            <button  onClick={increaseQuantity} className="p-2  cursor-pointer">
+            <button onClick={increaseQuantity} className="p-2  cursor-pointer">
               <Plus size={20} />
+              <span className="sr-only">Plus</span>
             </button>
-            <p className="text-2xl">{quantity}</p>
-            <button  onClick={decreaseQuantity} className="p-2  cursor-pointer">
+            <p className="text-xl">{quantity}</p>
+            <button onClick={decreaseQuantity} className="p-2  cursor-pointer">
               <Minus size={20} />
+              <span className="sr-only">Minus</span>
             </button>
           </div>
 
           <button
             onClick={addToCart}
-            className="flex w-full bg-darkgreen1 items-center  text-white justify-center gap-2 p-4 rounded-full  cursor-pointer"
+            className="flex w-full bg-darkgreen1 hover:bg-darkgreen2 transition-all  items-center  text-white justify-center gap-2 p-4 rounded-full  cursor-pointer "
           >
-            <p className="text-[16px]">Adicionar</p>
-            <ShoppingBag  className="text-[min(12px, 22px)]"/>
+            <p className="text-[min(20px,70px)]">Adicionar</p>
+            <ShoppingBag className="text-[min(10px,70px)]" />
           </button>
         </div>
       </div>
