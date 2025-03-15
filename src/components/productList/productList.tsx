@@ -21,7 +21,7 @@ const ProductList = () => {
     async function fetchProducts() {
       try {
         const res = await fetch(
-          "https://my-json-server.typicode.com//YngCwDev/fakeApi/Products"
+          "http://localhost:4000/Products"
         );
         const data = await res.json();
         setProducts(data);
