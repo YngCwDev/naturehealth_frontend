@@ -1,28 +1,23 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import ProductCard from "../productCard/productCard";
+import { ProductProps } from "@/lib/types";
 
-type Product = {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  brand: string;
-  image: string;
-};
+
+function getProducts({Products}: ProductProps[]){
+  return Products
+}
 
 const ProductList = () => {
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<ProductProps[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const res = await fetch(
-          "http://localhost:4000/Products"
-        );
+        const res = await fetch("http://localhost:4000/Products");
         const data = await res.json();
         setProducts(data);
       } catch (error) {
@@ -41,7 +36,7 @@ const ProductList = () => {
   return (
     <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-2 gap-4 md:gap-8 px-5 md:px-20 place-items-center">
       {products.map((product) => (
-        <ProductCard {...product} key={product.id} />
+        <ProductCard product={product} key={product.id} />
       ))}
     </div>
   );

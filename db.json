@@ -6,7 +6,14 @@
       "description": "Saw palmetto enhanced - 60 cápsulas",
       "price": 700,
       "brand": "Nature",
-      "image": "/products/nature.png",
+      "images": [
+        "/products/nature.png",
+        "/products/temple.png",
+        "/products/nature.png",
+        "/products/nature.png"
+      ],
+      "categories": ["Suplementos", "Saúde Masculina", "Próstata"],
+
       "details": {
         "denomination": "Saw palmetto enhanced - 60 cápsulas",
         "overview": "Suplemento à base de Saw Palmetto para saúde prostática e função urinária equilibrada.",
@@ -17,9 +24,7 @@
         "storageConditions": "Manter em local seco e fresco, ao abrigo da luz solar direta. Manter fora do alcance de crianças.",
         "disclaimer": "Este produto não substitui uma alimentação equilibrada e um estilo de vida saudável.",
         "weight": "30 Gramas",
-        "nutritionalFacts": [
-          { "Saw Palmetto (extrato seco)": "320 mg" }
-        ]
+        "nutritionalFacts": [{ "Saw Palmetto (extrato seco)": "320 mg" }]
       }
     },
     {
@@ -28,7 +33,13 @@
       "description": "Regula o ciclo do sono - 90 cápsulas",
       "price": 500,
       "brand": "Nature",
-      "image": "/products/moringa.png",
+      "images": [
+        "/products/temple.png",
+        "/products/nature.png",
+        "/products/nature.png",
+        "/products/temple.png"
+      ],
+      "categories": ["Suplementos", "Sono", "Relaxamento"],
       "details": {
         "denomination": "Regula o ciclo do sono - 90 cápsulas",
         "overview": "Melatonina para regulação do sono, auxiliando na sincronização do ciclo circadiano.",
@@ -51,7 +62,13 @@
       "description": "Óleo de peixe concentrado - 60 cápsulas",
       "price": 1350,
       "brand": "Nature",
-      "image": "/products/temple.png",
+      "images": [
+        "/products/moringa.png",
+        "/products/nature.png",
+        "/products/temple.png",
+        "/products/nature.png"
+      ],
+      "categories": ["Suplementos", "Saúde Cardiovascular", "Cérebro"],
       "details": {
         "denomination": "Óleo de peixe purificado - 60 cápsulas",
         "overview": "Ômega 3 de alta concentração para saúde cardiovascular e função cerebral otimizada.",
@@ -62,10 +79,7 @@
         "storageConditions": "Conservar em local seco e fresco. Após aberto, consumir dentro de 60 dias.",
         "disclaimer": "Suplemento alimentar sem fins terapêuticos. Consulte um profissional de saúde antes de iniciar o uso.",
         "weight": "35 Gramas",
-        "nutritionalFacts": [
-          { "EPA": "360 mg" },
-          { "DHA": "240 mg" }
-        ]
+        "nutritionalFacts": [{ "EPA": "360 mg" }, { "DHA": "240 mg" }]
       }
     },
     {
@@ -74,7 +88,13 @@
       "description": "Suplemento vitamínico antioxidante - 120 cápsulas",
       "price": 850,
       "brand": "Nature",
-      "image": "/products/nature.png",
+      "images": [
+        "/products/nature.png",
+        "/products/temple.png",
+        "/products/moringa.png",
+        "/products/nature.png"
+      ],
+      "categories": ["Suplementos", "Imunidade", "Antioxidante"],
       "details": {
         "denomination": "Suplemento vitamínico antioxidante - 120 cápsulas",
         "overview": "Vitamina C de alta potência para imunidade e combate aos radicais livres.",
@@ -85,9 +105,7 @@
         "storageConditions": "Manter fechado em local seco e arejado.",
         "disclaimer": "Não exceder a dose diária recomendada.",
         "weight": "40 Gramas",
-        "nutritionalFacts": [
-          { "Vitamina C": "500 mg" }
-        ]
+        "nutritionalFacts": [{ "Vitamina C": "500 mg" }]
       }
     },
     {
@@ -96,7 +114,13 @@
       "description": "Suplemento energético natural - 90 cápsulas",
       "price": 1200,
       "brand": "Nature",
-      "image": "/products/moringa.png",
+      "images": [
+        "/products/temple.png",
+        "/products/moringa.png",
+        "/products/nature.png",
+        "/products/temple.png"
+      ],
+      "categories": ["Suplementos", "Energia", "Foco Mental"],
       "details": {
         "denomination": "Suplemento energético natural - 90 cápsulas",
         "overview": "Combinação de cafeína e guaraná para energia prolongada e foco mental.",
@@ -107,9 +131,7 @@
         "storageConditions": "Conservar em local fresco e seco, longe da umidade.",
         "disclaimer": "Este produto não substitui uma alimentação equilibrada e hábitos saudáveis.",
         "weight": "45 Gramas",
-        "nutritionalFacts": [
-          { "Cafeína": "100 mg" }
-        ]
+        "nutritionalFacts": [{ "Cafeína": "100 mg" }]
       }
     },
     {
@@ -118,7 +140,13 @@
       "description": "Suplemento de Zinco com Vitamina D3 - 60 cápsulas",
       "price": 950,
       "brand": "Nature",
-      "image": "/products/temple.png",
+      "images": [
+        "/products/nature.png",
+        "/products/moringa.png",
+        "/products/temple.png",
+        "/products/nature.png"
+      ],
+      "categories": ["Suplementos", "Imunidade", "Saúde Óssea"],
       "details": {
         "denomination": "Suplemento de Zinco com Vitamina D3 - 60 cápsulas",
         "overview": "Associação de zinco e vitamina D3 para imunidade e saúde óssea.",
@@ -141,7 +169,13 @@
       "description": "Colágeno hidrolisado com vitamina E - 90 cápsulas",
       "price": 1100,
       "brand": "Nature",
-      "image": "/products/nature.png",
+      "images": [
+        "/products/moringa.png",
+        "/products/nature.png",
+        "/products/temple.png",
+        "/products/moringa.png"
+      ],
+      "categories": ["Suplementos", "Beleza", "Anti-Envelhecimento"],
       "details": {
         "denomination": "Colágeno hidrolisado com vitamina E - 90 cápsulas",
         "overview": "Fórmula revitalizante para pele, cabelos e unhas, com antioxidantes.",
@@ -164,7 +198,13 @@
       "description": "Probióticos para saúde intestinal - 60 cápsulas",
       "price": 1000,
       "brand": "Nature",
-      "image": "/products/moringa.png",
+      "images": [
+        "/products/nature.png",
+        "/products/temple.png",
+        "/products/moringa.png",
+        "/products/nature.png"
+      ],
+      "categories": ["Suplementos", "Digestão", "Intestino"],
       "details": {
         "denomination": "Probióticos para saúde intestinal - 60 cápsulas",
         "overview": "Cepas probióticas para equilíbrio da flora intestinal e digestão saudável.",
@@ -187,7 +227,13 @@
       "description": "Cúrcuma com piperina - 60 cápsulas",
       "price": 800,
       "brand": "Nature",
-      "image": "/products/temple.png",
+      "images": [
+        "/products/temple.png",
+        "/products/moringa.png",
+        "/products/nature.png",
+        "/products/temple.png"
+      ],
+      "categories": ["Suplementos", "Anti-Inflamatório", "Saúde Hepática"],
       "details": {
         "denomination": "Cúrcuma com piperina - 60 cápsulas",
         "overview": "Anti-inflamatório natural com biodisponibilidade aumentada pela piperina.",
@@ -198,10 +244,7 @@
         "storageConditions": "Manter em recipiente hermético após abertura.",
         "disclaimer": "Não recomendado para gestantes sem orientação médica.",
         "weight": "25 Gramas",
-        "nutritionalFacts": [
-          { "Curcumina": "500 mg" },
-          { "Piperina": "5 mg" }
-        ]
+        "nutritionalFacts": [{ "Curcumina": "500 mg" }, { "Piperina": "5 mg" }]
       }
     },
     {
@@ -210,7 +253,13 @@
       "description": "Multivitamínico completo - 120 cápsulas",
       "price": 1400,
       "brand": "Nature",
-      "image": "/products/nature.png",
+      "images": [
+        "/products/moringa.png",
+        "/products/nature.png",
+        "/products/temple.png",
+        "/products/moringa.png"
+      ],
+      "categories": ["Suplementos", "Multivitamínicos", "Nutrição Diária"],
       "details": {
         "denomination": "Multivitamínico completo - 120 cápsulas",
         "overview": "Completo mix de vitaminas e minerais para suprir necessidades diárias.",

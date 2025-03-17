@@ -2,12 +2,18 @@ import { Plus, Minus } from "lucide-react";
 import React from "react";
 
 type quantityFunctions = {
-    increaseQuantity: React.MouseEventHandler<HTMLButtonElement>;
-    decreaseQuantity: React.MouseEventHandler<HTMLButtonElement>;
-    quantity: number;
-}
+  setQuantity: any;
+  quantity: number;
+};
 
-const QuantityButton = ({increaseQuantity, decreaseQuantity, quantity}:quantityFunctions) => {
+const QuantityButton = ({ setQuantity, quantity }: quantityFunctions) => {
+  const increaseQuantity = () => {
+    setQuantity((prev: any) => prev + 1);
+  };
+
+  const decreaseQuantity = () => {
+    setQuantity((prev: any) => (prev > 1 ? prev - 1 : 1));
+  };
   return (
     <div
       className="flex items-center gap-2 justify-between border border-gray-300 rounded-full cursor-pointer px-3 py-1 sm:px-4 sm:py-2"

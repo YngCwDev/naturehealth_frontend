@@ -4,9 +4,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-* {
-  box-sizing: border-box;
-}
+
 :root {
   --white: #ffffff;
   --grey-background: #f8f8f8;

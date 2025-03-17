@@ -8,88 +8,52 @@ import Image from "next/image";
 import { Minus, Plus, ShoppingBag } from "lucide-react";
 import Link from "next/link";
 import QuantityButton from "./quantityButton";
+import CtaButton from "./ctaButton";
+import { Product, ProductProps } from "@/lib/types";
 
-// Define a interface para os detalhes do produto
-export interface ProductCardProps {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  brand: string;
-  image: string;
-  qty?: number; // Add optional qty property
-}
-
-const ProductCard: React.FC<ProductCardProps> = ({
-  id,
-  name,
-  description,
-  price,
-  brand,
-  image,
-}) => {
+const ProductCard = ({ product }: Product) => {
   const [quantity, setQuantity] = useState(1);
 
-  const increaseQuantity = () => {
-    setQuantity(quantity + 1);
-  };
-
-  const decreaseQuantity = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
-  };
-
   const addToCart = () => {
-    console.log(quantity, id);
+    console.log(quantity, product.id);
   };
 
   return (
     <div className="flex flex-col h-fit w-full max-w-[350px] items-center justify-between gap-5 shadow-lg p-4 rounded-md cursor-pointer md:hover:scale-105 transition-all">
-      <Link href={"/product"}>
-        <div className="rounded-md w-full h-auto max-h-[250px] overflow-hidden">
+      <Link href={"/product/" + product.id}>
+        <div className="rounded-md w-full h-auto lg:min-h-[250px] max-h-[250px] overflow-hidden">
           <Image
-            src={image}
-            alt={name}
+            src={product.images[0]}
+            alt={product.name}
             width={300}
             height={300}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover lg:min-h-[250px]"
           />
         </div>
       </Link>
-
       <div className="flex flex-col justify-between gap-4 w-full h-full">
-        <Link href={"/product"}>
+        <Link href={"/product/" + product.id}>
           <div className="flex flex-col gap-2 text-center md:text-left">
             <h2 className="text-[14px] sm:text-[18px] md:text-[24px] font-semibold text-green1">
-              {name}
+              {product.name}
             </h2>
             <p className="text-xs sm:text-sm text-gray-500 text-wrap md:flex hidden">
-              {description}
+              {product.description}
             </p>
             <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-2">
-              <p className="text-gray-700 text-sm sm:text-base">{brand}</p>
+              <p className="text-gray-700 text-sm sm:text-base">
+                {product.brand}
+              </p>
               <p className="font-bold text-lg sm:text-xl text-green2">
-                {price} Mts
+                {product.price} Mts
               </p>
             </div>
           </div>
         </Link>
 
         <div className="flex flex-col sm:flex-row gap-2 mt-4 md:justify-between w-full">
-          <QuantityButton
-            increaseQuantity={increaseQuantity}
-            decreaseQuantity={decreaseQuantity}
-            quantity={quantity}
-          />
-
-          <button
-            onClick={addToCart}
-            className="flex w-full sm:w-auto bg-darkgreen1 hover:bg-darkgreen2 transition-all items-center text-white justify-center gap-2 p-3 sm:p-4 px-6 rounded-full cursor-pointer"
-          >
-            <p className="text-sm sm:text-base md:flex hidden">Adicionar</p>
-            <ShoppingBag size={20} />
-          </button>
+          <QuantityButton setQuantity={setQuantity} quantity={quantity} />
+          <CtaButton action={addToCart} name={"Adicionar"} />
         </div>
       </div>
     </div>
