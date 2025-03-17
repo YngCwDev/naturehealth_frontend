@@ -6,6 +6,8 @@ export interface ProductProps {
   price: string;
   description: string;
   images: string[];
+  categories: string[];
+  keywords: string[];
   details: {
     denomination: string;
     overview: string;
@@ -24,4 +26,7 @@ export interface ProductProps {
 
 export type Product = {
   product: ProductProps;
+};
+export type Products = {
+  products: ProductProps[];
 };

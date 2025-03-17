@@ -1,17 +1,8 @@
 import { use } from "react";
 import ProductClient from "./product-client";
-import type { ProductProps } from "@/lib/types";
 import Related from "./related";
-
-async function getProducts(): Promise<ProductProps[]> {
-  const res = await fetch("http://localhost:4000/Products", {});
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch products");
-  }
-
-  return res.json();
-}
+import { getProducts } from "@/lib/model";
+import ProductDetails from "./productDetails";
 
 export default function ProductPage({
   params,
@@ -34,7 +25,8 @@ export default function ProductPage({
   return (
     <>
       <ProductClient product={product} />;
-      <Related product={product} />
+      <Related products={products} currentProduct={product.keywords} />
+      <ProductDetails product={product} />
     </>
   );
 }

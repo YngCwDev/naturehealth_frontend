@@ -55,9 +55,12 @@ export default function ProductClient({ product }: Product) {
 
         {/* Product Details */}
         <div className="flex flex-col space-y-6">
-          <h1 className="text-3xl font-bold text-green1 leading-tight tracking-tighter md:text-4xl">
-            {product.name + " n/" + product.description}
+          <h1 className="text-3xl font-bold text-green1 leading-tight tracking-tighter md:text-4xl truncate">
+            {product.name} <br />
           </h1>
+          <h2 className="text-xl font-semibold text-darkgreen1 leading-tight tracking-tighter md:text-2xl">
+            {product.description}
+          </h2>
 
           <div className="flex items-center justify-between">
             <div className="text-sm md:text-base">
