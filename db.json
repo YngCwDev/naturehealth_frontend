@@ -34,7 +34,12 @@
         "storageConditions": "Manter em local seco e fresco, ao abrigo da luz solar direta. Manter fora do alcance de crianças.",
         "disclaimer": "Este produto não substitui uma alimentação equilibrada e um estilo de vida saudável.",
         "weight": "30 Gramas",
-        "nutritionalFacts": [{ "Saw Palmetto (extrato seco)": "320 mg" }]
+        "nutritionalFacts": [{ "Saw Palmetto (extrato seco)": "320 mg" }],
+        "benefits": [
+          "Reduz o tamanho da próstata em casos de hiperplasia benigna.",
+          "Melhora o fluxo urinário e reduz desconfortos associados.",
+          "Promove conforto urinário e saúde prostática."
+        ]
       }
     },
     {
@@ -79,6 +84,12 @@
           { "Ferro": "18 mg" },
           { "Zinco": "15 mg" },
           { "Vitamina D": "5 mcg" }
+        ],
+        "benefits": [
+          "Apoia o equilíbrio hormonal e regulação menstrual.",
+          "Fornece energia diária e vitalidade para mulheres.",
+          "Suporta a saúde óssea e imunológica.",
+          "Ajuda na preparação do corpo para a concepção."
         ]
       }
     },
@@ -123,6 +134,12 @@
           { "Proteína": "25g" },
           { "Carboidratos": "2g" },
           { "Gorduras": "1g" }
+        ],
+        "benefits": [
+          "Promove ganho de massa muscular magra.",
+          "Acelera a recuperação muscular após exercícios intensos.",
+          "Fornece aminoácidos essenciais para construção muscular.",
+          "Melhora o desempenho físico e resistência."
         ]
       }
     },
@@ -163,7 +180,16 @@
         "storageConditions": "Conservar em local fresco e seco, longe da luz solar direta.",
         "disclaimer": "Este produto não substitui uma dieta equilibrada e exercícios físicos regulares.",
         "weight": "25 Gramas",
-        "nutritionalFacts": [{ "Cafeína": "200 mg" }, { "Chá Verde": "150 mg" }]
+        "nutritionalFacts": [
+          { "Cafeína": "200 mg" },
+          { "Chá Verde": "150 mg" }
+        ],
+        "benefits": [
+          "Acelera o metabolismo e promove queima de gordura.",
+          "Aumenta os níveis de energia durante o dia.",
+          "Ajuda no controle de peso e definição corporal.",
+          "Reduz o cansaço e melhora o foco mental."
+        ]
       }
     },
     {
@@ -203,7 +229,13 @@
         "storageConditions": "Conservar em local seco e fresco. Após aberto, consumir dentro de 90 dias.",
         "disclaimer": "Resultados podem variar conforme a dieta e estilo de vida.",
         "weight": "30 Gramas",
-        "nutritionalFacts": [{ "EPA": "300 mg" }, { "DHA": "200 mg" }]
+        "nutritionalFacts": [{ "EPA": "300 mg" }, { "DHA": "200 mg" }],
+        "benefits": [
+          "Melhora a memória e capacidade de aprendizado.",
+          "Aumenta o foco mental e clareza de pensamento.",
+          "Protege o cérebro contra o envelhecimento precoce.",
+          "Reduz o estresse e melhora a produtividade."
+        ]
       }
     },
     {
@@ -240,12 +272,19 @@
         "warnings": "Gestantes devem consultar um médico antes de iniciar o uso.",
         "additionalMention": "Auxilia na regulação menstrual e suporte à fertilidade.",
         "storageConditions": "Armazenar em local seco e arejado.",
-        "disclaimer": "Não substitui uma dieta equilibrada e estilo de vida saudável.",
+        "disclaimer": "Este produto não substitui uma dieta equilibrada e estilo de vida saudável.",
         "weight": "40 Gramas",
         "nutritionalFacts": [
           { "Ferro": "18 mg" },
           { "Ácido Fólico": "400 mcg" },
           { "Zinco": "15 mg" }
+        ],
+        "benefits": [
+          "Apoia o equilíbrio hormonal e regulação menstrual.",
+          "Fornece nutrientes essenciais para a saúde da mulher.",
+          "Auxilia na preparação do corpo para a concepção.",
+          "Reduz sintomas associados à síndrome dos ovários policísticos (SOP).",
+          "Promove bem-estar geral e energia diária."
         ]
       }
     },
@@ -283,9 +322,16 @@
         "warnings": "Pessoas com doenças crônicas devem consultar um médico antes de iniciar o uso.",
         "additionalMention": "A maca peruana é conhecida por seus benefícios para a saúde masculina e libido.",
         "storageConditions": "Conservar em local seco e fresco, longe da luz solar direta.",
-        "disclaimer": "Este produto não substitui uma dieta equilibrada e estilo de vida saudável.",
+        "disclaimer": "Este produto não substitui uma alimentação equilibrada e estilo de vida saudável.",
         "weight": "30 Gramas",
-        "nutritionalFacts": [{ "Maca Peruana": "500 mg" }]
+        "nutritionalFacts": [{ "Maca Peruana": "500 mg" }],
+        "benefits": [
+          "Aumenta a energia e disposição física.",
+          "Melhora a performance sexual e libido.",
+          "Promove resistência e vitalidade masculina.",
+          "Reduz o cansaço mental e físico.",
+          "Equilibra os níveis hormonais masculinos."
+        ]
       }
     },
     {
@@ -324,91 +370,15 @@
         "additionalMention": "A Bacopa monnieri é usada há séculos para melhorar a cognição e reduzir o estresse.",
         "storageConditions": "Conservar em local seco e fresco, longe da luz solar direta.",
         "disclaimer": "Resultados podem variar conforme a dieta e estilo de vida.",
-        "weight": "30 Gramas",
-        "nutritionalFacts": [{ "Bacopa Monnieri": "300 mg" }]
-      }
-    },
-    {
-      "id": "9i",
-      "name": "Suplemento para Saúde Articular",
-      "description": "Glucosamina e condroitina para suporte às articulações - 90 cápsulas",
-      "price": 900,
-      "brand": "Nature",
-      "categories": ["Saúde Articular"],
-      "images": [
-        "/products/temple.png",
-        "/products/nature.png",
-        "/products/moringa.png",
-        "/products/nature.png"
-      ],
-      "keywords": [
-        "saúde articular",
-        "glucosamina",
-        "condroitina",
-        "mobilidade",
-        "flexibilidade",
-        "cartilagem",
-        "desgaste articular",
-        "dor nas articulações",
-        "joelho",
-        "colágeno",
-        "idosos",
-        "bem-estar articular"
-      ],
-      "details": {
-        "denomination": "Glucosamina + Condroitina - 90 cápsulas",
-        "overview": "Fórmula avançada para suporte às articulações, cartilagens e flexibilidade.",
-        "ingredients": "Glucosamina, condroitina, cápsula de gelatina.",
-        "instruction": "Tomar 2 cápsulas ao dia, preferencialmente junto às refeições.",
-        "warnings": "Pessoas alérgicas a frutos do mar devem evitar o consumo.",
-        "additionalMention": "Ajuda na manutenção da saúde articular e no alívio do desgaste natural das articulações.",
-        "storageConditions": "Manter em local fresco e seco, longe da umidade.",
-        "disclaimer": "Não substitui tratamentos médicos para problemas articulares.",
-        "weight": "45 Gramas",
-        "nutritionalFacts": [
-          { "Glucosamina": "1500 mg" },
-          { "Condroitina": "1200 mg" }
+        "weight": "25 Gramas",
+        "nutritionalFacts": [{ "Bacopa Monnieri": "300 mg" }],
+        "benefits": [
+          "Melhora a memória e capacidade de aprendizado.",
+          "Aumenta o foco mental e clareza de pensamento.",
+          "Reduz o estresse e ansiedade.",
+          "Protege o cérebro contra danos oxidativos.",
+          "Promove longevidade cognitiva e saúde mental."
         ]
-      }
-    },
-    {
-      "id": "10j",
-      "name": "Suplemento para Saúde do Coração",
-      "description": "Coenzima Q10 para suporte cardiovascular - 60 cápsulas",
-      "price": 1300,
-      "brand": "Nature",
-      "categories": ["Saúde do Coração"],
-      "images": [
-        "/products/nature.png",
-        "/products/temple.png",
-        "/products/moringa.png",
-        "/products/nature.png"
-      ],
-      "keywords": [
-        "saúde do coração",
-        "coenzima Q10",
-        "energia celular",
-        "coração saudável",
-        "pressão arterial",
-        "circulação sanguínea",
-        "colesterol",
-        "saúde cardiovascular",
-        "longevidade",
-        "bem-estar cardíaco",
-        "antioxidantes",
-        "idosos"
-      ],
-      "details": {
-        "denomination": "Coenzima Q10 - 60 cápsulas",
-        "overview": "Suplemento à base de CoQ10 para suporte à saúde cardiovascular e energia celular.",
-        "ingredients": "Coenzima Q10, óleo de girassol, cápsula gelatinosa.",
-        "instruction": "Tomar 1 cápsula ao dia, preferencialmente junto às refeições.",
-        "warnings": "Pessoas em uso de medicamentos para pressão arterial devem consultar um médico antes do uso.",
-        "additionalMention": "A CoQ10 é um antioxidante essencial para o funcionamento celular e saúde cardiovascular.",
-        "storageConditions": "Armazenar em local seco e fresco, longe da luz solar direta.",
-        "disclaimer": "Este suplemento não substitui uma alimentação equilibrada e acompanhamento médico.",
-        "weight": "35 Gramas",
-        "nutritionalFacts": [{ "Coenzima Q10": "100 mg" }]
       }
     }
   ]

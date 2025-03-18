@@ -21,6 +21,7 @@ export interface ProductProps {
     nutritionalFacts: {
       [key: string]: string;
     };
+    benefits: string[];
   };
 }
 
