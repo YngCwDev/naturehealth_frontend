@@ -47,7 +47,7 @@ const Related = ({ products, currentProduct }: relatedProducts) => {
   return (
     <section className="my-8 mb-14">
       <h2 className="text-green2 font-bold my-4">PRODUTOS RELACIONADOS</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
         {relatedProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

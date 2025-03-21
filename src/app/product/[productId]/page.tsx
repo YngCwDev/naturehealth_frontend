@@ -3,6 +3,7 @@ import ProductClient from "./product-client";
 import Related from "./related";
 import { getProducts } from "@/lib/model";
 import ProductDetails from "./productDetails";
+import Reviews from "./reviews";
 
 export default function ProductPage({
   params,
@@ -27,6 +28,7 @@ export default function ProductPage({
       <ProductClient product={product} />;
       <Related products={products} currentProduct={product.keywords} />
       <ProductDetails product={product} />
+      <Reviews product={product} />
     </>
   );
 }
