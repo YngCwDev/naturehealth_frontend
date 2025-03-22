@@ -3,7 +3,7 @@ import ProductList from "@/components/productList/productList";
 
 function Home() {
   return (
-    <>
+    <> 
       <header>
         <Banner lg={"Prostate.png"} md={"flyer_md.png"} sm={"flyer_sm.png"} />
       </header>
@@ -14,6 +14,7 @@ function Home() {
           </h1>
           <div className="md:w-28 w-20 border-2 border-darkgreen1"></div>
         </div>
+        
         <ProductList />
       </section>
       <section>
