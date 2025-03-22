@@ -4,7 +4,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-
 :root {
   --white: #ffffff;
   --grey-background: #f8f8f8;
@@ -195,8 +194,15 @@
 
   h1 {
     @apply text-3xl font-bold text-darkgreen1;
+    font-size: clamp(320px, 80vw, 60rem);
   }
   h2 {
     @apply text-2xl font-semibold text-green1;
+  }
+  th, td{
+    @apply pr-4
+  }
+  th{
+    @apply text-[14px]
   }
 }

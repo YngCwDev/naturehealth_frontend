@@ -6,8 +6,8 @@ const ProductDetails = ({ product }: Product) => {
   const [selectedTab, setTab] = useState(0);
 
   return (
-    <section className="my-8">
-      <h2 className="text-green2 font-bold uppercase text-lg mb-4">
+    <section className="my-8 md:h-[600px]">
+      <h2 className="text-green2 font-bold uppercase text-2xl mb-4">
         Detalhes do Produto
       </h2>
       <div className="flex gap-8">
@@ -49,65 +49,89 @@ const ProductDetails = ({ product }: Product) => {
         <div className="w-3/4">
           {/* Sobre o Produto */}
           {selectedTab === 0 && (
-            <div>
-              <h4 className="font-semibold text-md">Denominação de Venda</h4>
-              <p className="mb-2">{product.name}</p>
+            <div className="space-y-8">
+              <div>
+                <h4 className="font-semibold text-md">Denominação de Venda</h4>
+                <p className="mb-2">{product.name}</p>
+              </div>
 
-              <h4 className="font-semibold text-md">Ingredientes</h4>
-              <p className="mb-2">{product.details.ingredients}</p>
-
-              <h4 className="font-semibold text-md">Advertências</h4>
-              <p className="mb-2">{product.details.warnings}</p>
-
-              <h4 className="font-semibold text-md">Modo de Tomar/Usar</h4>
-              <p className="mb-2">{product.details.instruction}</p>
-
-              <h4 className="font-semibold text-md">
-                Condições de Conservação
-              </h4>
-              <p>{product.details.storageConditions}</p>
+              <div>
+                <h4 className="font-semibold text-md">Ingredientes</h4>
+                <p className="mb-2">{product.details.ingredients}</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-md">Advertências</h4>
+                <p className="mb-2">{product.details.warnings}</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-md">Modo de Tomar/Usar</h4>
+                <p className="mb-2">{product.details.instruction}</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-md">
+                  Condições de Conservação
+                </h4>
+                <p>{product.details.storageConditions}</p>
+              </div>
             </div>
           )}
 
           {/* Características */}
           {selectedTab === 1 && (
-            <div>
-              <h4 className="font-semibold text-md">Denominação de Venda</h4>
-              <p className="mb-2">{product.name}</p>
+            <div className="space-y-8">
+              <div>
+                <h4 className="font-semibold text-md">Denominação de Venda</h4>
+                <p className="mb-2">{product.name}</p>
+              </div>
 
-              <h4 className="font-semibold text-md">Benefícios</h4>
-              <ul className="list-disc ml-6">
-                {product.details.benefits?.map((benefit, index) => (
-                  <li key={index}>{benefit}</li>
-                ))}
-              </ul>
-
-              <h4 className="font-semibold text-md">Fatos Nutricionais</h4>
-              <ul className="list-disc ml-6">
-                {Object.entries(product.details.nutritionalFacts).map(
-                  ([key, value], index) => (
-                    <li key={index}>
-                      {key}: {value}
-                    </li>
-                  )
-                )}
-              </ul>
+              <div>
+                <h4 className="font-semibold text-md">Benefícios</h4>
+                <ul className="list-disc ml-6">
+                  {product.details.benefits?.map((benefit, index) => (
+                    <li key={index}>{benefit}</li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold text-md">Fatos Nutricionais</h4>
+                <table>
+                  <tbody className="list-disc ml-6 border-b-2 space-y-2 max-w-[800px]">
+                    <tr className="border-b-2">
+                      <th className="text-start">Nutriente</th>
+                      <th className="text-start">Valor Diarios(%/mg)</th>
+                    </tr>
+                    {product.details.nutritionalFacts.map(
+                      (fact: object, index: number) => (
+                        <tr key={index} className="border-b-2">
+                          <td>{Object.keys(fact)}</td>
+                          <td className="text-end">{Object.values(fact)}</td>
+                        </tr>
+                      )
+                    )}
+                  </tbody>
+                </table>
+              </div>
             </div>
           )}
 
           {/* Informação Adicional */}
           {selectedTab === 2 && (
-            <div>
-              <h4 className="font-semibold text-md">Menção Adicional</h4>
-              <p className="mb-2">
-                {product.details.additionalMention || "N/A"}
-              </p>
+            <div className="space-y-8">
+              <div>
+                <h4 className="font-semibold text-md">Menção Adicional</h4>
+                <p className="mb-2">
+                  {product.details.additionalMention || "N/A"}
+                </p>
+              </div>
 
-              <h4 className="font-semibold text-md">Declaração Legal</h4>
-              <p className="mb-2">{product.details.disclaimer}</p>
-
-              <h4 className="font-semibold text-md">Peso</h4>
-              <p>{product.details.weight}</p>
+              <div>
+                <h4 className="font-semibold text-md">Declaração Legal</h4>
+                <p className="mb-2">{product.details.disclaimer}</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-md">Peso</h4>
+                <p>{product.details.weight}</p>
+              </div>
             </div>
           )}
         </div>

@@ -18,11 +18,18 @@ export interface ProductProps {
     storageConditions: string;
     disclaimer: string;
     weight: string;
-    nutritionalFacts: {
-      [key: string]: string;
-    };
+    nutritionalFacts: [
+      {
+        [key: string]: string;
+      }
+    ];
     benefits: string[];
   };
+  comments: [
+    {
+      [key: string]: string | number;
+    }
+  ];
 }
 
 export type Product = {
