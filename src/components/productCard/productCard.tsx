@@ -3,20 +3,20 @@
 // Organizado, formata e retorna um objecto do produto selecionado pronto para ser utilizado
 
 "use client";
-import React, { useRef, useState } from "react";
+import { Product } from "@/lib/types";
+import { ShoppingBag } from "lucide-react";
 import Image from "next/image";
-import { Minus, Plus, ShoppingBag } from "lucide-react";
 import Link from "next/link";
-import QuantityButton from "./quantityButton";
+import { useState } from "react";
 import CtaButton from "./ctaButton";
-import { Product, ProductProps } from "@/lib/types";
+import QuantityButton from "./quantityButton";
 
 const ProductCard = ({ product }: Product) => {
   const [quantity, setQuantity] = useState(1);
 
-  const addToCart = () => {
+  /*  const addToCart = () => {
     console.log(quantity, product.id);
-  };
+  }; */
 
   return (
     <div className="flex flex-col h-fit w-full max-w-[350px] items-center justify-between gap-5 shadow-lg p-4 rounded-md cursor-pointer md:hover:scale-105 transition-all">
@@ -27,7 +27,7 @@ const ProductCard = ({ product }: Product) => {
             alt={product.name}
             width={300}
             height={300}
-            className="w-full h-full object-cover lg:min-h-[250px]"
+            className="w-full h-full lg:min-h-[250px]"
           />
         </div>
       </Link>
@@ -53,7 +53,16 @@ const ProductCard = ({ product }: Product) => {
 
         <div className="flex flex-col sm:flex-row gap-2 mt-4 md:justify-between w-full">
           <QuantityButton setQuantity={setQuantity} quantity={quantity} />
-          <CtaButton action={addToCart} name={"Adicionar"} />
+          <div className="flex gap-4">
+            <CtaButton
+              action={"addToCart"}
+              name={"Adicionar"}
+              className={"bg-darkgreen1 text-white hover:bg-darkgreen2"}
+              icon={true}
+            >
+              <ShoppingBag />
+            </CtaButton>
+          </div>
         </div>
       </div>
     </div>

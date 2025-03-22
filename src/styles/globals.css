@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
 @plugin "tailwindcss-animate";
+@plugin "flowbite/plugin";
+@source "../../node_modules/flowbite";
+
+
 
 @custom-variant dark (&:is(.dark *));
 
@@ -199,10 +203,11 @@
   h2 {
     @apply text-2xl font-semibold text-green1;
   }
-  th, td{
-    @apply pr-4
+  th,
+  td {
+    @apply pr-4;
   }
-  th{
-    @apply text-[14px]
+  th {
+    @apply text-[14px];
   }
 }

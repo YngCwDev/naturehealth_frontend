@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className="bg-white drop-shadow-md w-full  top-0 z-50">
+    <nav className="bg-white drop-shadow-md w-full  top-0 z-50 text-darkgreen1">
       <div className=" px-[10vw] py-3 hidden md:flex justify-between items-center">
         {/* Logo */}
         <Link href={"/"}>
@@ -25,7 +25,7 @@ const Navbar = () => {
 
         {/* Carrinho de compras */}
         <div className="relative flex items-center gap-2">
-          <ShoppingCart size={28} className="text-gray-700" />
+          <ShoppingCart size={28} className="" />
           <p className="text-lg font-semibold">{}</p>
         </div>
       </div>
@@ -50,9 +50,9 @@ const Navbar = () => {
           </div>
 
           {/* Carrinho de compras */}
-          <div className="relative flex items-center gap-2">
-            <ShoppingCart size={28} className="text-gray-700" />
-            <p className="text-lg font-semibold">{}</p>
+          <div className="relative flex items-center gap-2 ">
+            <ShoppingCart size={28} className="" />
+            <div className="text-lg text-darkgreen1">0</div>
           </div>
         </div>
       </div>

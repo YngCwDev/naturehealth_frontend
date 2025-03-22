@@ -2,17 +2,17 @@ import { Plus, Minus } from "lucide-react";
 import React from "react";
 
 type quantityFunctions = {
-  setQuantity: any;
+  setQuantity: (value: number | ((prev: number) => number)) => void;
   quantity: number;
 };
 
 const QuantityButton = ({ setQuantity, quantity }: quantityFunctions) => {
   const increaseQuantity = () => {
-    setQuantity((prev: any) => prev + 1);
+    setQuantity((prev: number) => prev + 1);
   };
 
   const decreaseQuantity = () => {
-    setQuantity((prev: any) => (prev > 1 ? prev - 1 : 1));
+    setQuantity((prev: number) => (prev > 1 ? prev - 1 : 1));
   };
   return (
     <div

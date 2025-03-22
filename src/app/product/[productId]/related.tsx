@@ -1,7 +1,6 @@
 import ProductCard from "@/components/productCard/productCard";
-import { ProductProps, Products } from "@/lib/types";
+import { ProductProps } from "@/lib/types";
 import Link from "next/link";
-import React from "react";
 
 // Função para verificar categorias comuns entre dois produtos
 function hasCommonCategory(arr1: string[], arr2: string[]): boolean {
@@ -45,9 +44,9 @@ const Related = ({ products, currentProduct }: relatedProducts) => {
   }
 
   return (
-    <section className="my-8 mb-14">
+    <section className="my-8 mb-14 bg-white rounded-xl p-16">
       <h2 className="text-green2 font-bold my-4">PRODUTOS RELACIONADOS</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4  ">
         {relatedProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
