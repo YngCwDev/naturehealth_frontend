@@ -14,13 +14,14 @@ function Home() {
           </h1>
           <div className="md:w-28 w-20 border-2 border-darkgreen1"></div>
         </div>
-        
+
         <ProductList />
       </section>
       <section>
         <Banner lg={"banner2.png"} />
       </section>
     </>
+    
   );
 }
 
