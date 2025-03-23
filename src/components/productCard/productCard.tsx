@@ -14,15 +14,19 @@ import QuantityButton from "./quantityButton";
 const ProductCard = ({ product }: Product) => {
   const [quantity, setQuantity] = useState(1);
 
-  /*  const addToCart = () => {
+  const addToCart = () => {
     console.log(quantity, product.id);
-  }; */
+  };
 
   return (
-    <div className="flex flex-col h-fit w-full max-w-[350px] items-center justify-between gap-5 shadow-lg p-4 rounded-md cursor-pointer md:hover:scale-105 transition-all">
+    <div
+      key={product.id}
+      className="flex flex-col h-fit w-full max-w-[350px] items-center justify-between gap-5  bg-white shadow-lg p-4 rounded-2xl cursor-pointer md:hover:scale-105 transition-all"
+    >
       <Link href={"/product/" + product.id}>
         <div className="rounded-md w-full h-auto lg:min-h-[250px] max-h-[250px] overflow-hidden">
           <Image
+            key={product.id}
             src={product.images[0]}
             alt={product.name}
             width={300}
@@ -55,7 +59,7 @@ const ProductCard = ({ product }: Product) => {
           <QuantityButton setQuantity={setQuantity} quantity={quantity} />
           <div className="flex gap-4">
             <CtaButton
-              action={"addToCart"}
+              action={addToCart}
               name={"Adicionar"}
               className={"bg-darkgreen1 text-white hover:bg-darkgreen2"}
               icon={true}

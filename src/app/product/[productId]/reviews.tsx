@@ -10,8 +10,8 @@ const Reviews = ({ product }: Product) => {
         Comentários
       </h2>
 
-      <div className="flex">
-        <div className="min-w-[30vw]">
+      <div className="flex max-sm:flex-col">
+        <div className="md:min-w-[30vw] w-full">
           <GlobalRating />
         </div>
         <div className="space-y-6">

@@ -2,7 +2,7 @@ import React from "react";
 
 const GlobalRating = () => {
   return (
-    <div>
+    <div className="w-full">
       <div className="flex items-center mb-2">
         <svg
           className="w-4 h-4 text-green1 me-1"

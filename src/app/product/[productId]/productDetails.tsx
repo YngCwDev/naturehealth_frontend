@@ -6,13 +6,13 @@ const ProductDetails = ({ product }: Product) => {
   const [selectedTab, setTab] = useState(0);
 
   return (
-    <section className="my-8 md:h-[600px] space-y-24  bg-white  rounded-2xl p-4 md:p-8 lg:p-16">
+    <section className="my-8 md:h-[600px] space-y-24  bg-white  rounded-2xl p-4 md:p-8 lg:p-16 md:block hidden">
       <h2 className="text-green2 font-bold uppercase text-2xl mb-4">
         Detalhes do Produto
       </h2>
-      <div className="flex gap-8 text-start">
+      <div className="flex gap-8 text-start max-sm:w-full">
         {/* Sidebar */}
-        <div className="flex flex-col w-1/4  space-y-2">
+        <div className="flex flex-col w-full  space-y-2">
           <button
             onClick={() => setTab(0)}
             className={`p-4 border-l-4 text-start ${
@@ -46,7 +46,7 @@ const ProductDetails = ({ product }: Product) => {
         </div>
 
         {/* Conteúdo Principal */}
-        <div className="w-3/4">
+        <div className="w-3/4 md:block hidden">
           {/* Sobre o Produto */}
           {selectedTab === 0 && (
             <div className="space-y-8">

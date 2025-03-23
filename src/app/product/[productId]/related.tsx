@@ -1,6 +1,11 @@
+"use client";
 import ProductCard from "@/components/productCard/productCard";
 import { ProductProps } from "@/lib/types";
 import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "../../../../node_modules/swiper/swiper.css";
 
 // Função para verificar categorias comuns entre dois produtos
 function hasCommonCategory(arr1: string[], arr2: string[]): boolean {
@@ -44,12 +49,48 @@ const Related = ({ products, currentProduct }: relatedProducts) => {
   }
 
   return (
-    <section className="my-8 mb-14 bg-white rounded-xl p-16">
-      <h2 className="text-green2 font-bold my-4">PRODUTOS RELACIONADOS</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4  ">
-        {relatedProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+    <section className="my-8 mb-14 bg-white rounded-xl py-10 p-4 md:p-16">
+      <h2 className="text-green2 font-bold my-6 md:my-4 max-sm:text-2xl ">
+        PRODUTOS RELACIONADOS
+      </h2>
+      <div className="max-sm:hidden">
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={3}
+          navigation
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log("slide change")}
+          className="max-w-[70vw]"
+        >
+          {relatedProducts.map((product, index) => (
+            <SwiperSlide key={index}>
+              <ProductCard key={product.id} product={product} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+      {/* Mobile */}
+      <div className="md:hidden">
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={2}
+          navigation
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+          watchOverflow = {true}
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log("slide change")}
+          className="max-w-[90vw]"
+        >
+          {relatedProducts.map((product, index) => (
+            <SwiperSlide key={index}>
+              <ProductCard key={product.id} product={product} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </section>
   );

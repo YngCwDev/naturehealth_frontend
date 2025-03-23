@@ -38,3 +38,10 @@ export type Product = {
 export type Products = {
   products: ProductProps[];
 };
+export type ctaContent = {
+  action?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  name?: string;
+  className?: string;
+  icon?: boolean;
+  children?: React.ReactNode;
+};

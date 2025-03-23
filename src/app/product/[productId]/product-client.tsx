@@ -18,13 +18,12 @@ export default function ProductClient({ product }: Product) {
 
   const thumbnails = product.images.slice(1);
 
-
   return (
-    <section className=" mx-auto p-4 md:p-8 lg:p-16 bg-white my-8 rounded-2xl">
-      <div className="flex gap-6 justify-center">
+    <section className=" mx-auto p-4 md:p-8 lg:p-16 bg-white md:my-8 rounded-2xl">
+      <div className="flex max-sm:flex-col gap-6 justify-center">
         {/* Product Images */}
         <div className="flex flex-col  justify-center gap-4 ">
-          <div className="overflow-hidden size-[25vw] rounded-lg border">
+          <div className="overflow-hidden md:size-[25vw] rounded-lg border">
             <Image
               src={mainImage || "/placeholder.svg"}
               alt={product.name}
@@ -74,20 +73,27 @@ export default function ProductClient({ product }: Product) {
             </div>
           </div>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <QuantityButton setQuantity={setQuantity} quantity={quantity} />
-
-            <div className="flex gap-4">
+            <div className="flex">
+              <QuantityButton setQuantity={setQuantity} quantity={quantity} />
               <CtaButton
-                action={"handleAddClick"}
                 name={"Adicionar"}
                 className={"border-2 hover:bg-accent"}
                 icon={true}
               >
                 <ShoppingBag />
               </CtaButton>
+            </div>
+
+            <div className="flex gap-4">
+              <CtaButton
+                name={"Adicionar"}
+                className={"border-2 hover:bg-accent max-sm:hidden"}
+                icon={true}
+              >
+                <ShoppingBag />
+              </CtaButton>
 
               <CtaButton
-                action={"handleAddClick"}
                 name={"Comprar Já"}
                 className={"text-white bg-darkgreen1 hover:bg-darkgreen2"}
                 icon={false}

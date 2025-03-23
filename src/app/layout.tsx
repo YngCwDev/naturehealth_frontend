@@ -21,11 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} antialiased`}
+        className={`${poppins.className} antialiased  text-darkgreen1`}
         cz-shortcut-listen="true"
       >
         <Navbar />
-        <main className=""> {children}</main>
+        <main className="min-h-screen"> {children}</main>
         <Footer />
       </body>
     </html>

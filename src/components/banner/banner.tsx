@@ -17,7 +17,7 @@ const Banner = ({ lg, md, sm }: responsiveness) => {
             alt="prostate banner"
             width={1920}
             height={1080}
-            className="w-full lg:flex hidden"
+            className="w-screen lg:flex hidden"
           />
         )}
         {md != null && (
