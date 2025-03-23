@@ -1,6 +1,5 @@
 "use client";
 import { Product } from "@/lib/types";
-import React, { useState } from "react";
 
 const ProductDetailsMobile = ({ product }: Product) => {
   return (

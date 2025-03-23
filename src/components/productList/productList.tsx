@@ -30,9 +30,8 @@ const ProductList = () => {
   if (error) return <div className="text-red-500">{error}</div>;
   return (
     <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-2 gap-4 md:gap-8 px-5 md:px-20 place-items-center">
-      {products.map((product, index) => (
-          <ProductCard product={product} key={product.id} />
-        
+      {products.map((product) => (
+        <ProductCard product={product} key={product.id} />
       ))}
     </div>
   );

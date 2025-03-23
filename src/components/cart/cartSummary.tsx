@@ -1,6 +1,5 @@
-import React from "react";
+import { WalletMinimal } from "lucide-react";
 import CtaButton from "../productCard/ctaButton";
-import { Wallet2, Wallet2Icon, WalletMinimal } from "lucide-react";
 
 const CartSummary = () => {
   return (
