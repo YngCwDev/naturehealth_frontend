@@ -6,16 +6,16 @@ const ProductDetails = ({ product }: Product) => {
   const [selectedTab, setTab] = useState(0);
 
   return (
-    <section className="my-8 md:h-[600px]">
+    <section className="my-8 md:h-[600px] space-y-24  bg-white  rounded-2xl p-4 md:p-8 lg:p-16 md:block hidden">
       <h2 className="text-green2 font-bold uppercase text-2xl mb-4">
         Detalhes do Produto
       </h2>
-      <div className="flex gap-8">
+      <div className="flex gap-8 text-start max-sm:w-full">
         {/* Sidebar */}
-        <div className="flex flex-col w-1/4 space-y-2">
+        <div className="flex flex-col w-full  space-y-2">
           <button
             onClick={() => setTab(0)}
-            className={`p-4 border-l-4 ${
+            className={`p-4 border-l-4 text-start ${
               selectedTab === 0
                 ? "border-darkgreen1 bg-gray-100"
                 : "border-transparent"
@@ -25,7 +25,7 @@ const ProductDetails = ({ product }: Product) => {
           </button>
           <button
             onClick={() => setTab(1)}
-            className={`p-4 border-l-4 ${
+            className={`p-4 border-l-4 text-start ${
               selectedTab === 1
                 ? "border-darkgreen1 bg-gray-100"
                 : "border-transparent"
@@ -35,7 +35,7 @@ const ProductDetails = ({ product }: Product) => {
           </button>
           <button
             onClick={() => setTab(2)}
-            className={`p-4 border-l-4 ${
+            className={`p-4 border-l-4 text-start ${
               selectedTab === 2
                 ? "border-darkgreen1 bg-gray-100"
                 : "border-transparent"
@@ -46,7 +46,7 @@ const ProductDetails = ({ product }: Product) => {
         </div>
 
         {/* Conteúdo Principal */}
-        <div className="w-3/4">
+        <div className="w-3/4 md:block hidden">
           {/* Sobre o Produto */}
           {selectedTab === 0 && (
             <div className="space-y-8">
@@ -94,11 +94,11 @@ const ProductDetails = ({ product }: Product) => {
               </div>
               <div>
                 <h4 className="font-semibold text-md">Fatos Nutricionais</h4>
-                <table>
+                <table className="min-w-1/2">
                   <tbody className="list-disc ml-6 border-b-2 space-y-2 max-w-[800px]">
                     <tr className="border-b-2">
                       <th className="text-start">Nutriente</th>
-                      <th className="text-start">Valor Diarios(%/mg)</th>
+                      <th className="text-end">Valor Diarios(%/g/mg)</th>
                     </tr>
                     {product.details.nutritionalFacts.map(
                       (fact: object, index: number) => (

@@ -1,16 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { ShoppingBag, WalletMinimal } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import QuantityButton from "@/components/productCard/quantityButton";
+import QuantityButton from "@/components/productCard/quantity-button";
 import Image from "next/image";
 import { ProductProps } from "@/lib/types";
+import CtaButton from "@/components/productCard/cta-button";
+import { ShoppingBag, Wallet } from "lucide-react";
 
 type Product = {
   product: ProductProps;
 };
+
 export default function ProductClient({ product }: Product) {
   const [quantity, setQuantity] = useState(1);
   const [mainImage, setMainImage] = useState(product.images[0]);
@@ -18,11 +19,11 @@ export default function ProductClient({ product }: Product) {
   const thumbnails = product.images.slice(1);
 
   return (
-    <section className="container mx-auto p-4 md:p-8 lg:p-16 bg-white my-8 rounded-2xl">
-      <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
+    <section className=" mx-auto p-4 md:p-8 lg:p-16 bg-white md:my-8 rounded-2xl">
+      <div className="flex max-sm:flex-col gap-6 justify-center">
         {/* Product Images */}
         <div className="flex flex-col  justify-center gap-4 ">
-          <div className="overflow-hidden size-[25vw] rounded-lg border">
+          <div className="overflow-hidden md:size-[25vw] rounded-lg border">
             <Image
               src={mainImage || "/placeholder.svg"}
               alt={product.name}
@@ -46,7 +47,7 @@ export default function ProductClient({ product }: Product) {
                   alt={`Thumbnail ${index + 1}`}
                   width={100}
                   height={100}
-                  className="h-20 w-20 object-cover"
+                  className="h-20 w-20 object-cover p-2"
                 />
               </button>
             ))}
@@ -54,33 +55,47 @@ export default function ProductClient({ product }: Product) {
         </div>
 
         {/* Product Details */}
-        <div className="flex flex-col space-y-6">
-          <h1 className="text-3xl font-bold text-green1 leading-tight tracking-tighter md:text-4xl truncate">
+        <div className="flex flex-col space-y-2">
+          <h1 className="text-2xl text-wrap font-bold text-green1 leading-tight tracking-tighter md:text-4xl">
             {product.name} <br />
           </h1>
-          <h2 className="text-xl font-semibold text-darkgreen1 leading-tight tracking-tighter md:text-2xl">
+          <h2 className="text-[16px] font-semibold text-darkgreen1  leading-tight tracking-tighter md:text-2xl">
             {product.description}
           </h2>
 
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between my-10 pr-2">
             <div className="text-sm md:text-base">
               <p className="text-muted-foreground">{product.brand}</p>
               <p>{product.unit}</p>
             </div>
-            <div className="text-xl font-bold md:text-3xl">{product.price}</div>
+            <div className="text-xl font-bold md:text-3xl text-green2">
+              {product.price}.00 Mts
+            </div>
           </div>
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <QuantityButton setQuantity={setQuantity} quantity={quantity} />
+
+          <div className="md:flex hidden flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex">
+              <QuantityButton setQuantity={setQuantity} quantity={quantity} />
+            </div>
 
             <div className="flex gap-4">
-              <Button variant="outline" className="flex-1 sm:flex-none">
+              <CtaButton className={"border-2 hover:bg-accent max-sm:hidden"}>
                 Adicionar
-                <ShoppingBag className="mr-2 h-4 w-4" />
-              </Button>
-              <Button className="flex-1 sm:flex-none">
-                Comprar <WalletMinimal />
-              </Button>
+                <ShoppingBag className="max-sm:hidden" />
+              </CtaButton>
+
+              <CtaButton
+                className={"text-white bg-darkgreen1 hover:bg-darkgreen2"}
+              >
+                Comprar Já
+              </CtaButton>
             </div>
+          </div>
+
+          {/* Mobile */}
+
+          <div className="fixed bottom-0 flex justify-center    md:hidden">
+            <div></div>
           </div>
 
           <Card className="p-4">

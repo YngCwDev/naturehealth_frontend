@@ -1,11 +1,11 @@
-import BannerCarousel from "@/components/banner/banner-carousel";
+import Banner from "@/components/banner/banner";
 import ProductList from "@/components/productList/product-list";
 
-function Home() {
+function ProductsPage() {
   return (
-    <>
+    <> 
       <header>
-        <BannerCarousel />
+        <Banner lg={"Prostate.png"} md={"flyer_md.png"} sm={"flyer_sm.png"} />
       </header>
       <section className="flex flex-col items-center justify-center  gap-4 my-10">
         <div className="text-center my-8 space-y-4 flex flex-col items-center ">
@@ -17,8 +17,12 @@ function Home() {
 
         <ProductList />
       </section>
+      <section>
+        <Banner lg={"banner2.png"} />
+      </section>
     </>
+    
   );
 }
 
-export default Home;
+export default ProductsPage;
