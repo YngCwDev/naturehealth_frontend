@@ -6,11 +6,7 @@ import { Button } from "../ui/button";
 const SearchInput = () => {
   return (
     <div className="flex items-center relative w-full">
-      <Input
-        type="Search"
-        placeholder="O que procura?"
-        className="md:flex hidden"
-      />
+      <Input type="Search" placeholder="O que procura?" className="flex" />
 
       <Button
         variant={"ghost"}

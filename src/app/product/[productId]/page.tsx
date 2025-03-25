@@ -2,8 +2,9 @@ import { use } from "react";
 import ProductClient from "./product-client";
 import Related from "./related";
 import { getProducts } from "@/lib/model";
-import ProductDetails from "./productDetails";
+import ProductDetails from "./product-details";
 import Reviews from "./reviews";
+import ProductDetailsMobile from "./product-details-mobile";
 
 export default function ProductPage({
   params,
@@ -24,11 +25,12 @@ export default function ProductPage({
   }
 
   return (
-    <>
-      <ProductClient product={product} />;
+    <div className="">
+      <ProductClient product={product} />
       <Related products={products} currentProduct={product.keywords} />
       <ProductDetails product={product} />
+      <ProductDetailsMobile product={product} />
       <Reviews product={product} />
-    </>
+    </div>
   );
 }
