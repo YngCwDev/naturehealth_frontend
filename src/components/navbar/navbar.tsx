@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import SearchInput from "./SearchInput";
+import SearchInput from "./search-input";
 import { Search, ShoppingCart, X } from "lucide-react";
 import Link from "next/link";
-import CartPop from "../cart/cartPop";
+import CartPop from "../cart/cart-popover";
 
 const Navbar = () => {
   const [mouseOver, setMouseOver] = useState(false);

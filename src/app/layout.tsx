@@ -25,7 +25,7 @@ export default function RootLayout({
         cz-shortcut-listen="true"
       >
         <Navbar />
-        <main className="min-h-screen"> {children}</main>
+        <main className="min-h-[95vh]"> {children}</main>
         <Footer />
       </body>
     </html>

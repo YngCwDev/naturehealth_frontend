@@ -1,5 +1,5 @@
-import BannerCarousel from "@/components/banner/bannerCarousel";
-import ProductList from "@/components/productList/productList";
+import BannerCarousel from "@/components/banner/banner-carousel";
+import ProductList from "@/components/productList/product-list";
 
 function Home() {
   return (

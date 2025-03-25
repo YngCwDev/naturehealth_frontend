@@ -1,3 +1,4 @@
+
 export interface ProductProps {
   id: string;
   name: string;
@@ -40,8 +41,7 @@ export type Products = {
 };
 export type ctaContent = {
   action?: React.MouseEventHandler<HTMLButtonElement> | undefined;
-  name?: string;
+  setValue?: React.SetStateAction<any>;
   className?: string;
-  icon?: boolean;
   children?: React.ReactNode;
 };

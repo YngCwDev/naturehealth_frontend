@@ -1,5 +1,5 @@
 "use client";
-import ProductCard from "@/components/productCard/productCard";
+import ProductCard from "@/components/productCard/product-card";
 import { ProductProps } from "@/lib/types";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";

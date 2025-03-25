@@ -1,5 +1,5 @@
 import Banner from "@/components/banner/banner";
-import ProductList from "@/components/productList/productList";
+import ProductList from "@/components/productList/product-list";
 
 function ProductsPage() {
   return (

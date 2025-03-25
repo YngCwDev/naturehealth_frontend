@@ -2,9 +2,9 @@ import { use } from "react";
 import ProductClient from "./product-client";
 import Related from "./related";
 import { getProducts } from "@/lib/model";
-import ProductDetails from "./productDetails";
+import ProductDetails from "./product-details";
 import Reviews from "./reviews";
-import ProductDetailsMobile from "./productDetailsMobile";
+import ProductDetailsMobile from "./product-details-mobile";
 
 export default function ProductPage({
   params,

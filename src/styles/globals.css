@@ -1,10 +1,9 @@
 @import "tailwindcss";
 
+@config "../../tailwind.config.ts";
+
 @plugin "tailwindcss-animate";
-@plugin "flowbite/plugin";
 @source "../../node_modules/flowbite";
-
-
 
 @custom-variant dark (&:is(.dark *));
 
@@ -198,8 +197,9 @@
 
   h1 {
     @apply text-3xl font-bold text-darkgreen1;
-/*     font-size: clamp(320px, 80vw, 60rem);
- */  }
+    /*     font-size: clamp(320px, 80vw, 60rem);
+ */
+  }
   h2 {
     @apply text-2xl font-semibold text-green1;
   }

@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
-import QuantityButton from "@/components/productCard/quantityButton";
+import QuantityButton from "@/components/productCard/quantity-button";
 import Image from "next/image";
 import { ProductProps } from "@/lib/types";
-import CtaButton from "@/components/productCard/ctaButton";
+import CtaButton from "@/components/productCard/cta-button";
 import { ShoppingBag, Wallet } from "lucide-react";
 
 type Product = {
@@ -59,7 +59,7 @@ export default function ProductClient({ product }: Product) {
           <h1 className="text-2xl text-wrap font-bold text-green1 leading-tight tracking-tighter md:text-4xl">
             {product.name} <br />
           </h1>
-          <h2 className="text-xl font-semibold text-darkgreen1 leading-tight tracking-tighter md:text-2xl">
+          <h2 className="text-[16px] font-semibold text-darkgreen1  leading-tight tracking-tighter md:text-2xl">
             {product.description}
           </h2>
 
@@ -72,35 +72,30 @@ export default function ProductClient({ product }: Product) {
               {product.price}.00 Mts
             </div>
           </div>
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+
+          <div className="md:flex hidden flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex">
               <QuantityButton setQuantity={setQuantity} quantity={quantity} />
-              <CtaButton
-                name={"Adicionar"}
-                className={"border-2 hover:bg-accent"}
-                icon={true}
-              >
-                <ShoppingBag />
-              </CtaButton>
             </div>
 
             <div className="flex gap-4">
-              <CtaButton
-                name={"Adicionar"}
-                className={"border-2 hover:bg-accent max-sm:hidden"}
-                icon={true}
-              >
-                <ShoppingBag />
+              <CtaButton className={"border-2 hover:bg-accent max-sm:hidden"}>
+                Adicionar
+                <ShoppingBag className="max-sm:hidden" />
               </CtaButton>
 
               <CtaButton
-                name={"Comprar Já"}
                 className={"text-white bg-darkgreen1 hover:bg-darkgreen2"}
-                icon={false}
               >
-                <Wallet />
+                Comprar Já
               </CtaButton>
             </div>
+          </div>
+
+          {/* Mobile */}
+
+          <div className="fixed bottom-0 flex justify-center    md:hidden">
+            <div></div>
           </div>
 
           <Card className="p-4">

@@ -12,7 +12,7 @@ import Banner from "./banner";
 
 const BannerCarousel = () => {
   return (
-    <Swiper navigation={true} modules={[Navigation]} className="max-w-screen">
+    <Swiper navigation={true} modules={[Navigation]} className="max-w-screen w-fit">
       <SwiperSlide>
         <Banner lg="Prostate.png" md={"flyer_md.png"} sm={"flyer_sm.png"} />
       </SwiperSlide>

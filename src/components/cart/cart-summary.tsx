@@ -1,5 +1,6 @@
 import { WalletMinimal } from "lucide-react";
-import CtaButton from "../productCard/ctaButton";
+import CtaButton from "../productCard/cta-button";
+
 
 const CartSummary = () => {
   return (
@@ -9,23 +10,20 @@ const CartSummary = () => {
       <div className="space-y-3">
         <div className="flex justify-between ">
           <div>2x</div>
-          <div>1500.00 Mts</div>
+          <div>3000.00 Mts</div>
         </div>
         <div className="flex justify-between ">
           <div>2x</div>
-          <div>1500.00 Mts</div>
+          <div>3000.00 Mts</div>
         </div>
       </div>
       <div className="mt-10 mb-2 pt-2 border-t-2">
         <div className="flex justify-between px-2 py-2">
           <span>Total(4):</span>
-          <span className="text-green2">3000.00 Mts</span>
+          <span className="text-green2">6000.00 Mts</span>
         </div>
-        <CtaButton
-          icon={true}
-          name="Efectuar Pedido"
-          className="bg-darkgreen1 hover:bg-darkgreen2 text-white "
-        >
+        <CtaButton className="bg-darkgreen1 hover:bg-darkgreen2 text-white ">
+          Efectuar Pedido
           <WalletMinimal className="text-green1" />
         </CtaButton>
       </div>

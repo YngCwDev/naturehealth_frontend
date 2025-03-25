@@ -1,6 +1,6 @@
 import React from "react";
-import CartPopProduct from "./cartPopProduct";
-import CtaButton from "../productCard/ctaButton";
+import CartPopProduct from "./cart-pop-product";
+import CtaButton from "../productCard/cta-button";
 import Link from "next/link";
 
 const CartPop = () => {
@@ -16,9 +16,8 @@ const CartPop = () => {
       </div>
       <Link href={"/cart"} className="w-full">
         <CtaButton
-          name="Encomendar"
           className="bg-darkgreen1 text-white hover:bg-darkgreen2"
-        ></CtaButton>
+        >Encomendar</CtaButton>
       </Link>
     </div>
   );

@@ -3,7 +3,7 @@
 import { getProducts } from "@/lib/model";
 import { ProductProps } from "@/lib/types";
 import { useEffect, useState } from "react";
-import ProductCard from "../productCard/productCard";
+import ProductCard from "../productCard/product-card";
 
 const ProductList = () => {
   const [loading, setLoading] = useState(true);

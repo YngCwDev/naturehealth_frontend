@@ -8,8 +8,8 @@ import { ShoppingBag } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import CtaButton from "./ctaButton";
-import QuantityButton from "./quantityButton";
+import CtaButton from "./cta-button";
+import QuantityButton from "./quantity-button";
 
 const ProductCard = ({ product }: Product) => {
   const [quantity, setQuantity] = useState(1);
@@ -60,10 +60,9 @@ const ProductCard = ({ product }: Product) => {
           <div className="flex gap-4">
             <CtaButton
               action={addToCart}
-              name={"Adicionar"}
               className={"bg-darkgreen1 text-white hover:bg-darkgreen2"}
-              icon={true}
             >
+              Adicionar
               <ShoppingBag />
             </CtaButton>
           </div>
