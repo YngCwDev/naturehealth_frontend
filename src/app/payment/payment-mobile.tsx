@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 
 const PaymentMobile = () => {
   return (
-    <div className="bg-white w-full p-4">
+    <div className="bg-white w-full p-4 md:hidden">
       <h1 className="text-2xl font-bold mb-2">Pagamento</h1>
       <h3 className="text-lg mb-4">Preencha com os dados</h3>
       <form className="space-y-4 mb-6">
@@ -46,7 +46,14 @@ const PaymentMobile = () => {
             <label htmlFor="emola">Emola</label>
           </div>
         </fieldset>
-
+        <div className="flex flex-col gap-1">
+          <label htmlFor="PayService">Numero de Telemovel</label>
+          <Input
+            type="tel"
+            placeholder="Numero com o servico"
+            id="PayService"
+          />
+        </div>
         <div className="h-fit bg-white rounded-2xl px-4 pt-4 pb-2 min-w-1/4 shadow-md">
           <h2 className="py-4 border-b-2">Resumo</h2>
           <p className="py-4 font-semibold">Items</p>
@@ -75,7 +82,7 @@ const PaymentMobile = () => {
       <div className="p-4 border-[1.5px] border-gray-900 text-center rounded-2xl">
         <p className="font-bold text-red-700">Atenção!</p>
         <p>
-          Verifique o seu telemovel com o serviço de pagamento escolhido para
+          Verifique o seu telemovel com o serviço de pagamento selecionado  para
           poder proceder com a transação.{" "}
         </p>
       </div>
