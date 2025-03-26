@@ -1,6 +1,6 @@
 import { WalletMinimal } from "lucide-react";
 import CtaButton from "../productCard/cta-button";
-
+import Link from "next/link";
 
 const CartSummary = () => {
   return (
@@ -22,10 +22,12 @@ const CartSummary = () => {
           <span>Total(4):</span>
           <span className="text-green2">6000.00 Mts</span>
         </div>
-        <CtaButton className="bg-darkgreen1 hover:bg-darkgreen2 text-white ">
-          Efectuar Pedido
-          <WalletMinimal className="text-green1" />
-        </CtaButton>
+        <Link href="/payment">
+          <CtaButton className="bg-darkgreen1 hover:bg-darkgreen2 text-white ">
+            Efectuar Pedido
+            <WalletMinimal className="text-green1" />
+          </CtaButton>
+        </Link>
       </div>
     </div>
   );

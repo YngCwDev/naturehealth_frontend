@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import SearchInput from "./search-input";
-import { Search, ShoppingCart, X } from "lucide-react";
+import { Search, ShoppingBag, ShoppingCart, X } from "lucide-react";
 import Link from "next/link";
 import CartPop from "../cart/cart-popover";
 
@@ -27,7 +27,7 @@ const Navbar = () => {
             className="h-auto py-3"
           />
         </Link>
-        {/* Campo de busca */}
+        {/* Searh */}
         <div className="flex-1 min-w-[200px] max-w-[400px] py-3">
           <SearchInput />
         </div>
@@ -90,18 +90,18 @@ const Navbar = () => {
 
           {/* Carrinho de compras */}
           <div className="flex items-center gap-2 ">
-            <Link href="/cart">
-              <ShoppingCart size={24} strokeWidth={2} className="" />
+            <Link href={"/cart"}>
+              <ShoppingBag size={24} className="text-darkgreen1" />
             </Link>
           </div>
         </div>
       </div>
 
-   {/*    {searchBarOpen && (
-        <div className="max-sm:flex absolute top-14 bg-white w-screen px-6 py-4">
+      {searchBarOpen && (
+        <div className="max-sm:flex absolute top-12 bg-white w-screen px-6 py-4">
           <SearchInput />
         </div>
-      )} */}
+      )}
     </nav>
   );
 };
