@@ -11,8 +11,8 @@ const ProductDetailsMobile = ({ product }: Product) => {
     setOpen(alter);
   };
   return (
-    <section className="my-8 md:h-[600px] space-y-24  bg-white  rounded-2xl p-4 md:p-8 lg:p-16 md:hid">
-      <h2 className="text-green2 font-bold uppercase text-2xl mb-4">
+    <section className="my-8 md:h-[600px] space-y-24  bg-white  rounded-2xl p-4 md:p-8 lg:p-16 md:hidden">
+      <h2 className="text-green2 font-bold uppercase text-xl mb-4">
         Detalhes do Produto
       </h2>
       <div className="flex gap-8 text-start max-sm:w-full">
@@ -33,13 +33,13 @@ const ProductDetailsMobile = ({ product }: Product) => {
           {!isOpen ? (
             <div onClick={() => handleClick(true)}>
               <CtaButton className="bg-accent">
-                Ler mais <ChevronDown />
+                Ver mais <ChevronDown />
               </CtaButton>
             </div>
           ) : (
             <div onClick={() => handleClick(false)}>
               <CtaButton className="bg-accent">
-                Ler menos
+                Ver menos
                 <ChevronUp />
               </CtaButton>
             </div>

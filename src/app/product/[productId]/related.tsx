@@ -50,7 +50,7 @@ const Related = ({ products, currentProduct }: relatedProducts) => {
 
   return (
     <section className="my-8 mb-14 bg-white rounded-xl py-10 p-4 md:p-16">
-      <h2 className="text-green2 font-bold my-6 md:my-4 max-sm:text-2xl ">
+      <h2 className="text-green2 font-bold my-6 md:my-4 ">
         PRODUTOS RELACIONADOS
       </h2>
       <div className="max-sm:hidden">
@@ -71,16 +71,16 @@ const Related = ({ products, currentProduct }: relatedProducts) => {
           ))}
         </Swiper>
       </div>
-
+          
       {/* Mobile */}
       <div className="md:hidden">
         <Swiper
-          spaceBetween={50}
-          slidesPerView={2}
+          spaceBetween={5}
+          slidesPerView={1}
           navigation
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
-          watchOverflow = {true}
+          watchOverflow={true}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log("slide change")}
           className="max-w-[90vw]"

@@ -1,4 +1,3 @@
-
 export interface ProductProps {
   id: string;
   name: string;
@@ -39,6 +38,8 @@ export type Product = {
 export type Products = {
   products: ProductProps[];
 };
+
+/* Temp */
 export type ctaContent = {
   action?: React.MouseEventHandler<HTMLButtonElement> | undefined;
   setValue?: React.SetStateAction<any>;

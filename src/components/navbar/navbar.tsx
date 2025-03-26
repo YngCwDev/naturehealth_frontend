@@ -66,11 +66,11 @@ const Navbar = () => {
             alt="Nature Health"
             width={100}
             height={100}
-            className="h-auto"
+            className="h-auto w-[20vw]"
           />
         </Link>
         {/* Campo de busca */}
-        <div className="flex items-center gap-2 relative">
+        <div className="flex items-center gap-4 relative">
           <div>
             {searchBarOpen ? (
               <X
@@ -81,6 +81,7 @@ const Navbar = () => {
             ) : (
               <Search
                 strokeWidth={2}
+                size={24}
                 onClick={() => setSearchBarOpen(true)}
                 className="hover:bg-accent"
               />
@@ -89,17 +90,18 @@ const Navbar = () => {
 
           {/* Carrinho de compras */}
           <div className="flex items-center gap-2 ">
-            <ShoppingCart size={28} strokeWidth={2} className="" />
-            <div className="text-lg text-darkgreen1">0</div>
+            <Link href="/cart">
+              <ShoppingCart size={24} strokeWidth={2} className="" />
+            </Link>
           </div>
         </div>
       </div>
 
-      {searchBarOpen && (
+   {/*    {searchBarOpen && (
         <div className="max-sm:flex absolute top-14 bg-white w-screen px-6 py-4">
           <SearchInput />
         </div>
-      )}
+      )} */}
     </nav>
   );
 };

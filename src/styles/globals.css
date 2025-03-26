@@ -196,12 +196,12 @@
   }
 
   h1 {
-    @apply text-3xl font-bold text-darkgreen1;
+    @apply md:text-3xl text-2xl font-bold text-darkgreen1;
     /*     font-size: clamp(320px, 80vw, 60rem);
  */
   }
   h2 {
-    @apply text-2xl font-semibold text-green1;
+    @apply md:text-2xl text-xl md:font-bold font-semibold text-green1;
   }
   th,
   td {

@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
-import { Card } from "@/components/ui/card";
-import QuantityButton from "@/components/productCard/quantity-button";
-import Image from "next/image";
-import { ProductProps } from "@/lib/types";
 import CtaButton from "@/components/productCard/cta-button";
-import { ShoppingBag, Wallet } from "lucide-react";
+import QuantityButton from "@/components/productCard/quantity-button";
+import { Card } from "@/components/ui/card";
+import { ProductProps } from "@/lib/types";
+import { ShoppingBag } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
 
 type Product = {
   product: ProductProps;
@@ -19,7 +19,7 @@ export default function ProductClient({ product }: Product) {
   const thumbnails = product.images.slice(1);
 
   return (
-    <section className=" mx-auto p-4 md:p-8 lg:p-16 bg-white md:my-8 rounded-2xl">
+    <section className=" mx-auto p-4 md:p-8 lg:p-16 bg-white md:my-4 rounded-2xl">
       <div className="flex max-sm:flex-col gap-6 justify-center">
         {/* Product Images */}
         <div className="flex flex-col  justify-center gap-4 ">
@@ -40,7 +40,6 @@ export default function ProductClient({ product }: Product) {
                 className="overflow-hidden rounded-md border hover:border-primary"
                 onClick={() => setMainImage(thumb)}
               >
-                {" "}
                 <span className="sr-only">a</span>
                 <Image
                   src={thumb || "/placeholder.svg"}
@@ -56,10 +55,11 @@ export default function ProductClient({ product }: Product) {
 
         {/* Product Details */}
         <div className="flex flex-col space-y-2">
-          <h1 className="text-2xl text-wrap font-bold text-green1 leading-tight tracking-tighter md:text-4xl">
+          <h1 className="text-xl text-wrap font-bold text-green1 leading-tight tracking-tighter md:text-4xl">
             {product.name} <br />
           </h1>
-          <h2 className="text-[16px] font-semibold text-darkgreen1  leading-tight tracking-tighter md:text-2xl">
+
+          <h2 className="text-[15px] md:font-semibold text-darkgreen1  leading-tight tracking-tighter md:text-2xl">
             {product.description}
           </h2>
 
@@ -72,13 +72,17 @@ export default function ProductClient({ product }: Product) {
               {product.price}.00 Mts
             </div>
           </div>
-
-          <div className="md:flex hidden flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex">
+             
+          <div className="md:flex flex gap-2  flex-col sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex gap-4">
               <QuantityButton setQuantity={setQuantity} quantity={quantity} />
+              <CtaButton className={"border-2 hover:bg-accent"}>
+                Adicionar
+                <ShoppingBag className="max-sm:hidden" />
+              </CtaButton>
             </div>
 
-            <div className="flex gap-4">
+            <div className="flex">
               <CtaButton className={"border-2 hover:bg-accent max-sm:hidden"}>
                 Adicionar
                 <ShoppingBag className="max-sm:hidden" />
@@ -105,7 +109,6 @@ export default function ProductClient({ product }: Product) {
               Maputo
             </p>
           </Card>
-
           <div>
             <h3 className="mb-2 text-lg font-semibold">Visão Geral</h3>
             <p className="text-base leading-relaxed text-muted-foreground">
