@@ -42,7 +42,7 @@ export type Products = {
 /* Temp */
 export type ctaContent = {
   action?: React.MouseEventHandler<HTMLButtonElement> | undefined;
-  setValue?: React.SetStateAction<String | number | object>;
+  setValue?: React.SetStateAction<string | number | object>;
   className?: string;
   children?: React.ReactNode;
 };
