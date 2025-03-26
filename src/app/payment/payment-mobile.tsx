@@ -72,6 +72,13 @@ const PaymentMobile = () => {
           Confirmar Pagamento
         </CtaButton>
       </form>
+      <div className="p-4 border-[1.5px] border-gray-900 text-center rounded-2xl">
+        <p className="font-bold text-red-700">Atenção!</p>
+        <p>
+          Verifique o seu telemovel com o serviço de pagamento escolhido para
+          poder proceder com a transação.{" "}
+        </p>
+      </div>
     </div>
   );
 };

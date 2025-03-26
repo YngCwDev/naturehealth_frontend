@@ -1,9 +1,11 @@
 import CtaButton from "@/components/productCard/cta-button";
 import { Input } from "@/components/ui/input";
+import PaymentMobile from "./payment-mobile";
 
 const Payment = () => {
   return (
     <div>
+      <PaymentMobile />
       <div className="space-y-16 my-24 w-screen px-[15vw] place-content-center max-sm:hidden">
         <h1 className="uppercase text-center text-white font-semibold bg-darkgreen1 py-8">
           Pagamento
