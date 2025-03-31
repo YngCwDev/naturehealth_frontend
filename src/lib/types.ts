@@ -1,4 +1,4 @@
-export interface ProductProps {
+export type ProductProps = {
   id: string;
   name: string;
   brand: string;
@@ -30,7 +30,7 @@ export interface ProductProps {
       [key: string]: string | number;
     }
   ];
-}
+};
 
 export type Product = {
   product: ProductProps;

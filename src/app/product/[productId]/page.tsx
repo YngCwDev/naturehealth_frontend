@@ -1,8 +1,8 @@
 import { getProducts } from "@/lib/model";
 import { use } from "react";
-import ProductClient from "./product";
-import ProductDetails from "./product-details";
-import ProductDetailsMobile from "./product-details-mobile";
+import ProductClient from "../../../components/productView/product";
+import ProductDetails from "../../../components/productView/product-details";
+import ProductDetailsMobile from "../../../components/productView/product-details-mobile";
 import Related from "./related";
 
 export default function ProductPage({

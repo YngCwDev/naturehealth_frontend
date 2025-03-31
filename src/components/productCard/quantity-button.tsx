@@ -7,7 +7,7 @@ type quantityFunctions = {
 };
 
 const QuantityButton = ({ setQuantity, quantity }: quantityFunctions) => {
-
+  
   const increaseQuantity = () => {
     setQuantity((prev: number) => prev + 1);
   };

@@ -1,23 +1,9 @@
-//Documentacao do componente
-// Componente de produto que exibe os detalhes do produto e permite
-// Organizado, formata e retorna um objecto do produto selecionado pronto para ser utilizado
-
-"use client";
 import { Product } from "@/lib/types";
-import { ShoppingBag } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import CtaButton from "./cta-button";
-import QuantityButton from "./quantity-button";
+import ActionButtons from "./card-action-buttons";
 
 const ProductCard = ({ product }: Product) => {
-  const [quantity, setQuantity] = useState(1);
-
-  const addToCart = () => {
-    console.log(quantity, product.id);
-  };
-
   return (
     <div
       key={product.id}
@@ -54,19 +40,7 @@ const ProductCard = ({ product }: Product) => {
             </div>
           </div>
         </Link>
-
-        <div className="flex flex-col sm:flex-row gap-2 mt-4 md:justify-between w-full">
-          <QuantityButton setQuantity={setQuantity} quantity={quantity} />
-          <div className="flex gap-4">
-            <CtaButton
-              action={addToCart}
-              className={"bg-darkgreen1 text-white hover:bg-darkgreen2"}
-            >
-              Adicionar
-              <ShoppingBag />
-            </CtaButton>
-          </div>
-        </div>
+        <ActionButtons product={product} />
       </div>
     </div>
   );

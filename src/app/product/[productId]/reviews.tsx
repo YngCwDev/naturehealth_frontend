@@ -1,4 +1,3 @@
-"use client";
 import GlobalRating from "@/components/rating/global-rating";
 import Rating from "@/components/rating/rating";
 import { Product } from "@/lib/types";

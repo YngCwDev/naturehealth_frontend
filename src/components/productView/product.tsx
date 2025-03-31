@@ -7,13 +7,13 @@ import { ProductProps } from "@/lib/types";
 import { ShoppingBag } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+import ActionButtons from "./product-action-buttons";
 
 type Product = {
   product: ProductProps;
 };
 
 export default function ProductClient({ product }: Product) {
-  const [quantity, setQuantity] = useState(1);
   const [mainImage, setMainImage] = useState(product.images[0]);
 
   const thumbnails = product.images.slice(1);
@@ -72,29 +72,8 @@ export default function ProductClient({ product }: Product) {
               {product.price}.00 Mts
             </div>
           </div>
-             
-          <div className="md:flex flex gap-2  flex-col sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex gap-4">
-              <QuantityButton setQuantity={setQuantity} quantity={quantity} />
-              <CtaButton className={"border-2 hover:bg-accent"}>
-                Adicionar
-                <ShoppingBag className="max-sm:hidden" />
-              </CtaButton>
-            </div>
 
-            <div className="flex">
-              <CtaButton className={"border-2 hover:bg-accent max-sm:hidden"}>
-                Adicionar
-                <ShoppingBag className="max-sm:hidden" />
-              </CtaButton>
-
-              <CtaButton
-                className={"text-white bg-darkgreen1 hover:bg-darkgreen2"}
-              >
-                Comprar Já
-              </CtaButton>
-            </div>
-          </div>
+          <ActionButtons product={product}/>
 
           {/* Mobile */}
 

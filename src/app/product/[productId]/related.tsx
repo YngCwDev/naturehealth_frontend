@@ -71,7 +71,7 @@ const Related = ({ products, currentProduct }: relatedProducts) => {
           ))}
         </Swiper>
       </div>
-          
+
       {/* Mobile */}
       <div className="md:hidden">
         <Swiper

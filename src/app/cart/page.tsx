@@ -18,7 +18,7 @@ const Page = () => {
           </div>
           <CartSummary />
         </div>
-        <div className="flex justify-between gap-6 hidden">
+        <div className="justify-between gap-6 hidden">
           <div className="flex p-8 bg-white rounded-2xl gap-4 items-center shadow-md">
             <span className="bg-darkgreen1 p-4 rounded-2xl">
               <Truck size={60} className="text-white" />
