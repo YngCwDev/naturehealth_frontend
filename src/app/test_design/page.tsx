@@ -1,10 +1,9 @@
-import React from "react";
-import CartMobile from "../../components/cart/cart-mobile";
+import CartCarouselAxisY from "@/components/cart/cart-carousel-axis-y";
 
 const Design = () => {
   return (
     <div>
-      <CartMobile />
+      <CartCarouselAxisY />
     </div>
   );
 };

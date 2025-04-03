@@ -211,3 +211,17 @@
     @apply text-[14px];
   }
 }
+
+.embla {
+  overflow: hidden;
+}
+
+.embla_container {
+  @apply flex flex-col justify-center items-center gap-2  w-full;
+}
+
+.embla_slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  margin-bottom: 4px;
+}

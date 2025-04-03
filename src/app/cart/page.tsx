@@ -1,7 +1,7 @@
 import CartProductCard from "@/components/cart/cart-product-card";
 import CartSummary from "@/components/cart/cart-summary";
 import { Truck } from "lucide-react";
-import CartMobile from "../../components/cart/cart-mobile";
+import CartMobile from "@/components/cart/mobile/cart-mobile";
 
 const Page = () => {
   return (

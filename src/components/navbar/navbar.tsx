@@ -1,21 +1,21 @@
 "use client";
-import React, { useState } from "react";
+import { ShoppingCart } from "lucide-react";
 import Image from "next/image";
-import SearchInput from "./search-input";
-import { Search, ShoppingBag, ShoppingCart, X } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 import CartPop from "../cart/cart-popover";
+import MobileNavBar from "./mobile-navbar";
+import SearchInput from "./search-input";
 
 const Navbar = () => {
   const [mouseOver, setMouseOver] = useState(false);
-  const [searchBarOpen, setSearchBarOpen] = useState(false);
 
   const handleMouseOver = (action: boolean) => {
     setMouseOver(action);
   };
 
   return (
-    <nav className="bg-white drop-shadow-md w-full  top-0 z-50 text-darkgreen1 relative">
+    <nav className="bg-white md:shadow-md w-full  top-0 z-50 text-darkgreen1 relative hidden md:flex">
       <div className=" px-[10vw] hidden md:flex justify-between items-center">
         {/* Logo */}
         <Link href={"/"}>
@@ -58,50 +58,7 @@ const Navbar = () => {
 
       {/* MOBILE SM */}
 
-      <div className=" px-[5vw] py-3 flex md:hidden justify-between items-center">
-        {/* Logo */}
-        <Link href={"/"}>
-          <Image
-            src="/glogo.png"
-            alt="Nature Health"
-            width={100}
-            height={100}
-            className="h-auto w-[20vw]"
-          />
-        </Link>
-        {/* Campo de busca */}
-        <div className="flex items-center gap-4 relative">
-          <div>
-            {searchBarOpen ? (
-              <X
-                strokeWidth={2}
-                onClick={() => setSearchBarOpen(false)}
-                className="hover:bg-accent"
-              />
-            ) : (
-              <Search
-                strokeWidth={2}
-                size={24}
-                onClick={() => setSearchBarOpen(true)}
-                className="hover:bg-accent"
-              />
-            )}
-          </div>
-
-          {/* Carrinho de compras */}
-          <div className="flex items-center gap-2 ">
-            <Link href={"/cart"}>
-              <ShoppingBag size={24} className="text-darkgreen1" />
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      {searchBarOpen && (
-        <div className="max-sm:flex absolute top-12 bg-white w-screen px-6 py-4">
-          <SearchInput />
-        </div>
-      )}
+      <MobileNavBar />
     </nav>
   );
 };
