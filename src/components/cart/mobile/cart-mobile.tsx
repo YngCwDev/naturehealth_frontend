@@ -57,7 +57,7 @@ const CartMobile = () => {
 
           {/* Button */}
           <div className="pt-4  w-full bottom-0 right-2.5 max-w-[95vw]  ">
-            <Link href={"/payment"}>
+            <Link href={"/cart/payment"}>
               <CtaButton className="bg-darkgreen1 text-white">
                 Efectuar o Pedido <ArrowRight size={20} />
               </CtaButton>
