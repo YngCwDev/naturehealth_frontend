@@ -1,3 +1,5 @@
+"use client";
+
 import CartCarouselAxisY from "@/components/cart/cart-carousel-axis-y";
 
 const Design = () => {

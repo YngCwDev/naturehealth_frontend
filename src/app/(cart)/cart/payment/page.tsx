@@ -1,3 +1,5 @@
+"use client";
+
 import CtaButton from "@/components/productCard/cta-button";
 import { Input } from "@/components/ui/input";
 import PaymentMobile from "./payment-mobile";

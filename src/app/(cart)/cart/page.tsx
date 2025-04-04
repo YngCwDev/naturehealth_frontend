@@ -6,7 +6,7 @@ import CartMobile from "@/components/cart/mobile/cart-mobile";
 const Page = () => {
   return (
     <div>
-      <div className="space-y-16 my-24 w-screen px-[15vw] place-content-center max-sm:hidden">
+      <div className="space-y-16 my-24 w-screen px-[15vw] place-content-center max-sm:hidden ">
         <h1 className="uppercase text-center text-white font-semibold bg-darkgreen1 py-8">
           Meu Carrinho
         </h1>
