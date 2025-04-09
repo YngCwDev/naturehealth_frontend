@@ -7,7 +7,7 @@ import Related from "./related";
 
 export default function ProductPage({
   params,
-}: {
+}: { 
   params: Promise<{ productId: string }>;
 }) {
   const resolvedParams = use(params);

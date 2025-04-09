@@ -24,12 +24,12 @@ const Navbar = () => {
             alt="Nature Health"
             width={100}
             height={100}
-            className="h-auto py-3"
+            className="md:size-20 xl:h-auto py-3"
           />
         </Link>
         {/* Searh */}
         <div className="flex-1 min-w-[200px] max-w-[400px] py-3">
-          <SearchInput />
+          <SearchInput/>
         </div>
 
         {/* Carrinho de compras */}
@@ -39,7 +39,7 @@ const Navbar = () => {
           className="relative py-3 cursor-pointer"
         >
           <div className=" flex items-center gap-2">
-            <ShoppingCart size={28} strokeWidth={2} className="" />
+            <ShoppingCart  className="text-lg font-semibold"/>
             <p className="text-lg font-semibold  px-2 bg-accent rounded-full">
               2
             </p>

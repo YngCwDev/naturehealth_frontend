@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 const PaymentMobile = () => {
   return (
     <div className="bg-white w-full p-4 md:hidden">
-      <h1 className="text-2xl font-bold mb-2">Pagamento</h1>
+      <h1 className="mb-2">Pagamento</h1>
       <h3 className="text-lg mb-4">Preencha com os dados</h3>
       <form className="space-y-4 mb-6">
         <div className="flex flex-col gap-1">

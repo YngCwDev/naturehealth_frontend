@@ -4,8 +4,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-darkgreen1 text-white px-6 md:px-[10vw] w-full">
-      <div className=" grid py-24 w-full gap-8 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1">
+    <footer className="bg-darkgreen1 text-white px-6 md:px-[10vw] w-screen">
+      <div className=" grid py-24 w-full gap-20 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1">
         {/* Logo e descrição */}
         <div className="footer_element w-1/3 text-sm flex flex-col  gap-3">
           <Image

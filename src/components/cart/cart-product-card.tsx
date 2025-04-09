@@ -14,7 +14,7 @@ const CartProductCard = () => {
       </div>
       <div className="flex flex-col justify-between w-full">
         <div className="flex justify-between gap-4">
-          <span className=" text-xl  font-semibold space-y-2">
+          <span className="font-semibold space-y-2">
             <p>Complexo Multivitamínico Feminino</p>
             <p className="text-gray-500 text-[14px] font-normal">Nature</p>
           </span>

@@ -1,4 +1,5 @@
 import TopBar from "@/components/cart/top-bar";
+import Footer from "@/components/footer/footer";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "../../styles/globals.css";
@@ -27,7 +28,9 @@ export default function CartLayout({
       >
         <TopBar/>
         <main className="min-h-[95vh]"> {children}</main>
-
+        <div className="hidden md:block">
+          <Footer/>
+        </div>
       </body>
     </html>
   );

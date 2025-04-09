@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import "../../../../node_modules/swiper/swiper.css";
+import "../../../../../node_modules/swiper/swiper.css";
 
 // Função para verificar categorias comuns entre dois produtos
 function hasCommonCategory(arr1: string[], arr2: string[]): boolean {

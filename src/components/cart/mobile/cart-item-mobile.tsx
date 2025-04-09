@@ -14,12 +14,14 @@ const CartItemMobile = () => {
         <Image src="/products/nature.png" alt="AA" width={100} height={100} />
       </div>
       <div className="flex flex-col justify-between gap-4 w-full">
-        <div className="flex gap-4">
-          <span className="text-[12px] font-semibold space-y-1 text-wrap max-w-[80vw]">
+        <div className="flex">
+          <span className="text-[12px] font-semibold space-y-1 text-wrap">
             <p>Complexo Multivitamínico Feminino</p>
             <p className="text-gray-500 text-[10px] font-normal">Nature</p>
           </span>
-          <span className="absolute right-2 ">
+          <div className=""/>
+          
+          <span className="absolute right-2">
             <button className="cursor-pointer">
               <span className="sr-only">trash</span>
               <Trash2 size={18} className="text-accent-foreground/60" />

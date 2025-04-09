@@ -29,10 +29,10 @@ const CartMobile = () => {
           </CtaButton>
         </div>
         <div className="w-full bg-white shadow-md p-2 rounded-2xl">
-          {/* Resumo */}
-
+          {/* Total */}
+          
           <div className="text-sm">
-            <p className="py-4 font-semibold">Totals</p>
+            <p className="py-4 font-semibold">Subtotal</p>
             <div className="space-y-1">
               <div className="flex justify-between ">
                 <div>Items(4x)</div>
@@ -43,7 +43,7 @@ const CartMobile = () => {
                 <div>250.00 Mts</div>
               </div>
               <div className="flex justify-between ">
-                <div>Desconto</div>
+                <div>Desconto</div> 
                 <div>0.00 Mts</div>
               </div>
             </div>

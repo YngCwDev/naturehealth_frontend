@@ -6,7 +6,7 @@ import { Button } from "../ui/button";
 const SearchInput = () => {
   return (
     <div className="flex items-center relative w-full">
-      <Input type="Search" placeholder="O que procura?" className="flex" />
+      <Input type="Search" placeholder="O que procura?" className="border-2 border-gray-400" />
 
       <Button
         variant={"ghost"}
@@ -15,7 +15,7 @@ const SearchInput = () => {
         title="Search"
         className="px-8 absolute right-0  cursor-pointer"
       >
-        <Search size={30} />
+        <Search className="size-6"/>
       </Button>
       <Button
         variant={"green"}
@@ -24,7 +24,7 @@ const SearchInput = () => {
         title="Search"
         className="px-8 absolute right-0   cursor-pointer hidden  md:flex"
       >
-        <Search size={30} />
+        <Search className="size-6"/>
       </Button>
     </div>
   );

@@ -8,12 +8,12 @@ const TopBar = () => {
   const router = useRouter();
 
   return (
-    <div className="flex top-0 justify-between  items-center px-[3vw] pt-2 bg-white w-full">
+    <div className="flex top-0 max-md:justify-between  justify-start items-center px-[3vw] max-md:pt-2 py-4 bg-white w-screen">
       <button onClick={() => router.back()} className="p-2 hover:bg-accent">
-        <ChevronLeft />
+        <ChevronLeft className="md:size-6"/>
       </button>
       <button onClick={() => router.push("/")} className="p-2 hover:bg-accent">
-        <Home />
+        <Home  className="max-md:size-6 size-5"/>
       </button>
     </div>
   );
